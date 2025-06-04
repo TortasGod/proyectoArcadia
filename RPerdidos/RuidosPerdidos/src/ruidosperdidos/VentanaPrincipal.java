@@ -15,6 +15,41 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        // Creamos un panel con todo el contenido
+        javax.swing.JPanel panelScroll = new javax.swing.JPanel();
+        panelScroll.setLayout(null);
+        panelScroll.setPreferredSize(new java.awt.Dimension(800, 2500)); // altura mayor
+
+        // Añadimos todos los componentes al panelScroll
+        panelScroll.add(jLabel2);
+        panelScroll.add(jLabel3);
+        panelScroll.add(jLabel4);
+        panelScroll.add(jLabel5);
+        panelScroll.add(jLabel6);
+        panelScroll.add(jLabel7);
+        panelScroll.add(jLabel8);
+        panelScroll.add(jLabel9);
+        panelScroll.add(jLabel10);
+        panelScroll.add(jLabel11);
+        panelScroll.add(jLabel12);
+        panelScroll.add(jLabel13);
+        panelScroll.add(jLabel14);
+        panelScroll.add(jLabel15);
+        panelScroll.add(jLabel16);
+        panelScroll.add(jLabel17);
+        panelScroll.add(jLabel18);
+        panelScroll.add(jLabel19);
+        panelScroll.add(jLabel20);
+        panelScroll.add(jLabel21);
+        panelScroll.add(lblDesDark);
+        panelScroll.add(jButton1);
+        panelScroll.add(jLabel1);
+
+        // Agrega el panelScroll al JScrollPane
+        scroll.setViewportView(panelScroll);
+
+        // Agrega el JScrollPane al JFrame
+        this.getContentPane().add(scroll, java.awt.BorderLayout.CENTER);
     }
 
     /**
@@ -50,6 +85,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        scroll = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,6 +171,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
+        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, 730, 2410));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.LINE_END);
 
@@ -201,5 +238,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLabel lblDesDark;
+    private javax.swing.JScrollPane scroll;
     // End of variables declaration//GEN-END:variables
 }
