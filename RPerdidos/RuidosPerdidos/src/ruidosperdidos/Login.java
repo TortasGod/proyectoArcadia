@@ -36,7 +36,7 @@ public class Login extends javax.swing.JFrame {
            
        this.setLocationRelativeTo(this);
 
-        con = ConexionSQL.ConexionSQLServer();
+        
         SetImageLebel(lblLogo,"src/imagenes/ruidos perdidos.png");
         SetImageLebel(lblIniciarSesion,"src/imagenes/iniciar sesion.png");
         SetImageLebel(lblUsuario,"src/imagenes/usuario.png");
