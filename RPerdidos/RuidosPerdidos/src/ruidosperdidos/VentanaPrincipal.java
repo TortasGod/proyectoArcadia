@@ -39,19 +39,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(lblBusca);
         panelScroll.add(lblBusca);
         panelScroll.add(jLabel9);
-        panelScroll.add(jLabel10);
-        panelScroll.add(jLabel11);
+        panelScroll.add(lblfondo);
+        panelScroll.add(lblStrokes);
         panelScroll.add(jLabel12);
         panelScroll.add(jLabel13);
         panelScroll.add(jLabel14);
-        panelScroll.add(jLabel15);
+        panelScroll.add(lblChangos);
         panelScroll.add(jLabel16);
         panelScroll.add(jLabel17);
         panelScroll.add(jLabel18);
         panelScroll.add(jLabel19);
         panelScroll.add(jLabel20);
         panelScroll.add(jLabel21);
-        panelScroll.add(lblDesDark);
+        panelScroll.add(lbldafpunk);
         panelScroll.add(jButton1);
         panelScroll.add(fondoS);
         panelScroll.add(txtBusqueda);
@@ -66,6 +66,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.getContentPane().add(scroll, java.awt.BorderLayout.CENTER);
         
         SetImageLebel(lblBusca,"src/imagenes/busqueda.png");
+        SetImageLebel(lblChangos,"src/imagenes/gorillaz.png");
+        SetImageLebel(lbldafpunk,"src/imagenes/darfpunkPor.png");
+        SetImageLebel(lblStrokes,"src/imagenes/TheStrokes.png");
+        SetImageLebel(lblfondo,"src/imagenes/urban.png");
         SetImageLebel(exitTxt, "src/imagenes/exit.png");
     }
 
@@ -89,26 +93,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane2 = new javax.swing.JLayeredPane();
+        header = new javax.swing.JPanel();
+        exitBtn = new javax.swing.JPanel();
+        exitTxt = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        header = new javax.swing.JPanel();
-        exitBtn = new javax.swing.JPanel();
-        exitTxt = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtBusqueda = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        lblfondo = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblStrokes = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lblChangos = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        lblDesDark = new javax.swing.JLabel();
+        lbldafpunk = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         lblBusca = new javax.swing.JLabel();
@@ -120,26 +124,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLayeredPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("1950");
-        jLayeredPane2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 37, -1));
-
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("1960");
-        jLayeredPane2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 30, -1));
-
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("1970");
-        jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
-
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("1980");
-        jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 30, -1));
-
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("1990");
-        jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -206,6 +190,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLayeredPane2.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("1950");
+        jLayeredPane2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 37, -1));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("1960");
+        jLayeredPane2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 30, -1));
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("1970");
+        jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("1980");
+        jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 30, -1));
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("1990");
+        jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
+
         jButton1.setText("Registrarse");
         jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 90, -1));
 
@@ -217,16 +221,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jLayeredPane2.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 180, 40));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
-        jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 680, 400));
+        lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
+        jLayeredPane2.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 730, 410));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
         jLabel9.setText("jLabel9");
         jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 410, 420));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes.png"))); // NOI18N
-        jLabel11.setText("jLabel9");
-        jLayeredPane2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 1890, 170, 140));
+        lblStrokes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes.png"))); // NOI18N
+        lblStrokes.setText("jLabel9");
+        jLayeredPane2.add(lblStrokes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1890, 150, 140));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor.png"))); // NOI18N
         jLabel12.setText("jLabel9");
@@ -242,16 +246,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel16.setText("<html>El sexto album de estudio de la aclamada banda francesa M83, Un album que nos pone en <br>posicion introspectiva sobre la vida y problemas internos de nosotros pero no importa por que al final solo estamos durmiendo.</html>");
         jLayeredPane2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1900, 190, 130));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
-        jLabel15.setText("jLabel9");
-        jLayeredPane2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2060, 170, 140));
+        lblChangos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
+        lblChangos.setText("jLabel9");
+        jLayeredPane2.add(lblChangos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2060, 150, 140));
 
         jLabel17.setText("------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 760, 20));
 
-        lblDesDark.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor.png"))); // NOI18N
-        lblDesDark.setText("jLabel9");
-        jLayeredPane2.add(lblDesDark, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1890, 170, 140));
+        lbldafpunk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor.png"))); // NOI18N
+        lbldafpunk.setText("jLabel9");
+        jLayeredPane2.add(lbldafpunk, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1890, 150, 140));
 
         jLabel19.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
         jLayeredPane2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1900, 190, 130));
@@ -272,7 +276,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLayeredPane2.add(fondoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 730, 90));
         jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 850, 70, 140));
 
-        getContentPane().add(jLayeredPane2, java.awt.BorderLayout.LINE_END);
+        getContentPane().add(jLayeredPane2, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -347,12 +351,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel fondoS;
     private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -367,7 +368,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLabel lblBusca;
-    private javax.swing.JLabel lblDesDark;
+    private javax.swing.JLabel lblChangos;
+    private javax.swing.JLabel lblStrokes;
+    private javax.swing.JLabel lbldafpunk;
+    private javax.swing.JLabel lblfondo;
     private javax.swing.JScrollPane scroll;
     private javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
