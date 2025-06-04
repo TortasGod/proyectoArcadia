@@ -54,8 +54,8 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         panelScroll.add(jButton1);
         //panelScroll.add(jButton2);
 
-        // Finalmente, ponemos ese panel dentro del scroll
-        //scroll.setViewportView(panelScroll);
+         //Finalmente, ponemos ese panel dentro del scroll
+        scroll.setViewportView(panelScroll);
     }
     
     
