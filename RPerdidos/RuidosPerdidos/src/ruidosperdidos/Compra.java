@@ -63,7 +63,7 @@ public class Compra extends javax.swing.JFrame {
 
         lblDescripcion = new javax.swing.JLabel();
         lblCantidad = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblLogoDisco = new javax.swing.JLabel();
         cmbCantidad = new javax.swing.JComboBox<>();
         lblConfirmar = new javax.swing.JLabel();
         lblAtras = new javax.swing.JLabel();
@@ -76,7 +76,7 @@ public class Compra extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setText("Imagen del disco ");
+        lblLogoDisco.setText("Imagen del disco ");
 
         cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una cantidad..." }));
         cmbCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -179,23 +179,24 @@ public class Compra extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cmbCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(466, 466, 466))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(147, 147, 147))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(lblCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(cmbCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(214, 214, 214)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblLogoDisco))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(134, 134, 134))
         );
         layout.setVerticalGroup(
@@ -211,7 +212,12 @@ public class Compra extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
-                                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(lblLogoDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(cmbCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,10 +229,9 @@ public class Compra extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(41, 41, 41)))
-                        .addContainerGap(54, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(43, 43, 43)
+                        .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addComponent(lblConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -271,6 +276,7 @@ public class Compra extends javax.swing.JFrame {
 
     private void cmbCatalogoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCatalogoItemStateChanged
         txtDesc.setText("");
+        lblLogoDisco.setBounds(150, 150, 150, 150);
         try {
             Statement st;
             st = con.createStatement();
@@ -287,6 +293,38 @@ public class Compra extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        if(cmbCatalogo.getSelectedItem().toString().equals("The Dark Side of the Moon")){
+            lblLogoDisco.setText("Pink Floyd");
+            SetImageLebel(lblLogoDisco, "src/imagenes/DarkSideOfTheMoon.jpg");
+        }
+        
+        if(cmbCatalogo.getSelectedItem().toString().equals("The Colour and the Shape")){
+            
+            lblLogoDisco.setText("Foo Fighters");
+            SetImageLebel(lblLogoDisco, "src/imagenes/TheColourAndTheShape.jpg");
+        }
+        
+        //enVivoBellasArtes
+        
+         if(cmbCatalogo.getSelectedItem().toString().equals("En vivo desde bellas artes")){
+            
+            lblLogoDisco.setText("Juan Gabriel");
+            SetImageLebel(lblLogoDisco, "src/imagenes/enVivoBellasArtes.jpg");
+        }
+         
+        if(cmbCatalogo.getSelectedItem().toString().equals("Definitely Maybe")){
+            
+            lblLogoDisco.setText("Oasis");
+            SetImageLebel(lblLogoDisco, "src/imagenes/definitelyMaybe.jpg");
+        }
+        
+        if(cmbCatalogo.getSelectedItem().toString().equals("Let it be")){
+            lblLogoDisco.setText("The Beatles");
+            SetImageLebel(lblLogoDisco, "src/imagenes/letItBe.jpg");
+        }
+         
+         
     }//GEN-LAST:event_cmbCatalogoItemStateChanged
 
     private void lblConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmarMouseClicked
@@ -385,12 +423,12 @@ public class Compra extends javax.swing.JFrame {
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAtras;
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblConfirmar;
     private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblLogoDisco;
     private javax.swing.JTextPane txtDesc;
     // End of variables declaration//GEN-END:variables
 }
