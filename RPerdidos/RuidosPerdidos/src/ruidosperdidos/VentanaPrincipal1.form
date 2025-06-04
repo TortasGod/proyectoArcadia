@@ -7,8 +7,6 @@
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JScrollBar" name="jScrollBar1">
-    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -313,13 +311,6 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="150" y="2260" width="190" height="130"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JScrollBar" name="jScrollBar3">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="740" y="18" width="-1" height="2160"/>
             </Constraint>
           </Constraints>
         </Component>
