@@ -16,7 +16,31 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     public VentanaPrincipal1() {
         initComponents();
   
- 
+  // 1. Creamos un panel con todo el contenido que queremos scrollear
+    javax.swing.JPanel panelScroll = new javax.swing.JPanel();
+    panelScroll.setLayout(null); // Usamos coordenadas absolutas si estás usando NetBeans con AbsoluteLayout
+
+    // 2. Establecemos un tamaño más grande que el visible
+    panelScroll.setPreferredSize(new java.awt.Dimension(800, 1200)); // Más grande que el scroll
+
+    // 3. Mover TODO lo que ya tienes en jLayeredPane2 (menos el JScrollPane) al panelScroll
+    // (puedes cortar esas líneas de add(...) del initComponents y pegarlas aquí)
+    // Ejemplo:
+    panelScroll.add(jLabel2);
+    panelScroll.add(jLabel3);
+    panelScroll.add(jLabel4);
+    panelScroll.add(jLabel5);
+    panelScroll.add(jLabel6);
+    panelScroll.add(jLabel7);
+    panelScroll.add(jLabel8);
+    panelScroll.add(jLabel9);
+    panelScroll.add(jLabel10);
+    panelScroll.add(jLabel1);
+    panelScroll.add(jButton1);
+    panelScroll.add(jButton2);
+
+    // 4. Finalmente, ponemos ese panel dentro del scroll
+    scroll.setViewportView(panelScroll);
     }
 
     /**
@@ -38,12 +62,13 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLayeredPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,13 +105,20 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel1.setOpaque(true);
         jLayeredPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 90));
 
-        jButton2.setText("jButton2");
-        jLayeredPane2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 870, -1, -1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 680, 400));
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor (1).png"))); // NOI18N
         jLabel9.setText("jLabel9");
-        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 450, 450));
-        jLayeredPane2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 50, 130));
+        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 410, 420));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel11.setText("jLabel9");
+        jLayeredPane2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1380, 410, 410));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes (2).png"))); // NOI18N
+        jLabel12.setText("jLabel9");
+        jLayeredPane2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 950, 410, 410));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.CENTER);
 
@@ -131,9 +163,10 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -143,6 +176,5 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
