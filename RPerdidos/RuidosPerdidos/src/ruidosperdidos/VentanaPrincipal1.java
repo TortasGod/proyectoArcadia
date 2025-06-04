@@ -138,19 +138,15 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 680, 400));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor (1).png"))); // NOI18N
         jLabel9.setText("jLabel9");
         jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 410, 420));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
         jLabel11.setText("jLabel9");
         jLayeredPane2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 1890, 170, 140));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes (2).png"))); // NOI18N
         jLabel12.setText("jLabel9");
         jLayeredPane2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 950, 410, 410));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
         jLabel13.setText("jLabel9");
         jLayeredPane2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1380, 410, 410));
 
@@ -160,14 +156,12 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel16.setText("<html>El sexto album de estudio de la aclamada banda francesa M83, Un album que nos pone en <br>posicion introspectiva sobre la vida y problemas internos de nosotros pero no importa por que al final solo estamos durmiendo.</html>");
         jLayeredPane2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1900, 190, 130));
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
         jLabel15.setText("jLabel9");
         jLayeredPane2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2060, 170, 140));
 
         jLabel17.setText("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
         jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 760, 20));
 
-        lblDesDark.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
         lblDesDark.setText("jLabel9");
         jLayeredPane2.add(lblDesDark, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1890, 170, 140));
 
