@@ -27,6 +27,7 @@ public class Login extends javax.swing.JFrame {
         SetImageLebel(lblIniciarSesion,"src/imagenes/iniciar sesion.png");
         SetImageLebel(lblUsuario,"src/imagenes/usuario.png");
         SetImageLebel(lblContrasena,"src/imagenes/contrasena.png");
+        SetImageLebel(exitTxt,"src/imagenes/exit.png");
         
         jButton3.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -37,7 +38,6 @@ public class Login extends javax.swing.JFrame {
     private void openRegistration() {
     Registrarse registrationFrame = new Registrarse();
     registrationFrame.setVisible(true);
-    this.dispose(); // Cierra el marco de inicio de sesión si deseas
 }
         int xMouse, yMouse;
         public void SetImageLebel(JLabel labelName, String root){
@@ -101,7 +101,6 @@ public class Login extends javax.swing.JFrame {
 
         exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exitTxt.setText("X");
         exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
         exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
