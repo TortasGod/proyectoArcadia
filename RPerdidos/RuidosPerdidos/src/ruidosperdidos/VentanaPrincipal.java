@@ -4,6 +4,7 @@
  */
 package ruidosperdidos;
 
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -19,8 +20,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
+                this.setUndecorated(true);
         initComponents();
-        this.setSize(900, 850);
+        this.setSize(900, 600);
+                this.setLocationRelativeTo(this);
         // Creamos un panel con todo el contenido
         javax.swing.JPanel panelScroll = new javax.swing.JPanel();
         panelScroll.setLayout(null);
@@ -52,6 +55,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(jButton1);
         panelScroll.add(fondoS);
         panelScroll.add(txtBusqueda);
+        panelScroll.add(header);
+        panelScroll.add(exitBtn);
+        panelScroll.add(exitTxt);
 
         // Agrega el panelScroll al JScrollPane
         scroll.setViewportView(panelScroll);
@@ -60,6 +66,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.getContentPane().add(scroll, java.awt.BorderLayout.CENTER);
         
         SetImageLebel(lblBusca,"src/imagenes/busqueda.png");
+        SetImageLebel(exitTxt, "src/imagenes/exit.png");
     }
 
     int xMouse, yMouse;
@@ -87,6 +94,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        exitBtn = new javax.swing.JPanel();
+        exitTxt = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtBusqueda = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -130,6 +140,71 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("1990");
         jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
+
+        header.setBackground(new java.awt.Color(255, 255, 255));
+        header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerMouseDragged(evt);
+            }
+        });
+        header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerMousePressed(evt);
+            }
+        });
+
+        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+
+        exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        exitTxt.setOpaque(true);
+        exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
+        exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitTxtMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitTxtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitTxtMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitBtnLayout = new javax.swing.GroupLayout(exitBtn);
+        exitBtn.setLayout(exitBtnLayout);
+        exitBtnLayout.setHorizontalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 52, Short.MAX_VALUE)
+            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(exitBtnLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        exitBtnLayout.setVerticalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 52, Short.MAX_VALUE)
+            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(exitBtnLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLayeredPane2.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, -1, -1));
 
         jButton1.setText("Registrarse");
         jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 90, -1));
@@ -194,8 +269,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         fondoS.setBackground(new java.awt.Color(153, 153, 153));
         fondoS.setForeground(new java.awt.Color(153, 153, 153));
         fondoS.setOpaque(true);
-        jLayeredPane2.add(fondoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 730, 90));
-        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 840, 70, 140));
+        jLayeredPane2.add(fondoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 730, 90));
+        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 850, 70, 140));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.LINE_END);
 
@@ -205,6 +280,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaActionPerformed
+
+    private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_exitTxtMouseClicked
+
+    private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
+        exitBtn.setBackground(Color.red);
+        exitTxt.setForeground(Color.white);
+    }//GEN-LAST:event_exitTxtMouseEntered
+
+    private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
+        exitBtn.setBackground(Color.white);
+        exitTxt.setForeground(Color.black);
+    }//GEN-LAST:event_exitTxtMouseExited
+
+    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerMouseDragged
+
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerMousePressed
 
     /**
      * @param args the command line arguments
@@ -242,7 +342,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel exitBtn;
+    private javax.swing.JLabel exitTxt;
     private javax.swing.JLabel fondoS;
+    private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
