@@ -20,7 +20,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-        this.setSize(900, 850);
+        
         // Creamos un panel con todo el contenido
         javax.swing.JPanel panelScroll = new javax.swing.JPanel();
         panelScroll.setLayout(null);
@@ -54,7 +54,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(txtBusqueda);
 
         // Agrega el panelScroll al JScrollPane
-        scroll.setViewportView(panelScroll);
+        scroll .setViewportView(panelScroll);
 
         // Agrega el JScrollPane al JFrame
         this.getContentPane().add(scroll, java.awt.BorderLayout.CENTER);
