@@ -294,5 +294,4 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
 }
-=======
->>>>>>> Stashed changes:RPerdidos/RuidosPerdidos/src/ruidosperdidos/ventanasss/Login.java
+

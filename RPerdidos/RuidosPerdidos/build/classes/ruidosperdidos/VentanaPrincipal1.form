@@ -7,6 +7,8 @@
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JScrollBar" name="jScrollBar1">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -168,9 +170,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/darfpunkPor (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -181,9 +180,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/gorillaz (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -194,9 +190,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/TheStrokes (2).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -207,9 +200,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/gorillaz (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -240,9 +230,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/gorillaz (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -263,9 +250,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblDesDark">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/gorillaz (1).png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -311,6 +295,13 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="150" y="2260" width="190" height="130"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JScrollBar" name="jScrollBar3">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="740" y="18" width="-1" height="2160"/>
             </Constraint>
           </Constraints>
         </Component>
