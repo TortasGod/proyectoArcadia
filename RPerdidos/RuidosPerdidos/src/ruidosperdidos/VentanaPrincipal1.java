@@ -70,7 +70,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPasswordField1 = new javax.swing.JPasswordField();
-        jScrollBar1 = new javax.swing.JScrollBar();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -95,7 +94,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jScrollBar3 = new javax.swing.JScrollBar();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -184,7 +182,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
-        jLayeredPane2.add(jScrollBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 18, -1, 2160));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.CENTER);
 
@@ -252,8 +249,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JScrollBar jScrollBar3;
     private javax.swing.JLabel lblDesDark;
     // End of variables declaration//GEN-END:variables
 }
