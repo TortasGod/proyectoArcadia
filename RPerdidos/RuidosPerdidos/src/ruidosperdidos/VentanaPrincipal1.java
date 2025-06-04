@@ -15,9 +15,13 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
      */
     public VentanaPrincipal1() {
         initComponents();
-  
  
+   // Listener para el botón de Registro
+        jButton1.addActionListener(e -> {
+            new Registrarse().setVisible(true);
+        });
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
