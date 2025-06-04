@@ -23,6 +23,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(this);
+
         
         SetImageLebel(lblLogo,"src/imagenes/ruidos perdidos.png");
         SetImageLebel(lblIniciarSesion,"src/imagenes/iniciar sesion.png");
