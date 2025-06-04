@@ -54,6 +54,11 @@ public class Compra extends javax.swing.JFrame {
                 cmbCantidadMouseClicked(evt);
             }
         });
+        cmbCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCantidadActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Confirmar");
 
@@ -109,11 +114,15 @@ public class Compra extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-/*
+
     private void cmbCantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbCantidadMouseClicked
         
     }//GEN-LAST:event_cmbCantidadMouseClicked
-  */  
+
+    private void cmbCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbCantidadActionPerformed
+
     public void llenarCantidad(){
         for(int i=0;i<30;i++){
             cmbCantidad.addItem(""+i);
