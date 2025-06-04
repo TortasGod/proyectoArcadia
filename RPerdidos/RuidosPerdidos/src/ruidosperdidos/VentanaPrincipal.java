@@ -118,6 +118,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblBusca = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblCarrito = new javax.swing.JLabel();
         fondoS = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
 
@@ -160,21 +162,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         exitBtn.setLayout(exitBtnLayout);
         exitBtnLayout.setHorizontalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 52, Short.MAX_VALUE)
-            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(exitBtnLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         exitBtnLayout.setVerticalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 52, Short.MAX_VALUE)
-            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(exitBtnLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addGroup(exitBtnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
@@ -211,7 +209,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
 
         jButton1.setText("Registrarse");
-        jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 90, -1));
+        jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 90, -1));
 
         txtBusqueda.setOpaque(true);
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -269,6 +267,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setPreferredSize(new java.awt.Dimension(40, 40));
+
+        lblCarrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/carrito_40x40.png"))); // NOI18N
+        lblCarrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCarritoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(20, 20, 20))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jLayeredPane2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 60, 50));
+
         fondoS.setBackground(new java.awt.Color(153, 153, 153));
         fondoS.setForeground(new java.awt.Color(153, 153, 153));
         fondoS.setOpaque(true);
@@ -308,6 +335,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
+
+    private void lblCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCarritoMouseClicked
+        Carrito c = new Carrito();
+        c.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblCarritoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -366,7 +399,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBusca;
+    private javax.swing.JLabel lblCarrito;
     private javax.swing.JLabel lblChangos;
     private javax.swing.JLabel lblStrokes;
     private javax.swing.JLabel lbldafpunk;

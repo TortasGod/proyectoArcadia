@@ -9,19 +9,30 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author magal
  */
 public class Compra extends javax.swing.JFrame {
-
+    public static Connection con;
     /**
      * Creates new form Compra
      */
     public Compra() {
+        con = ConexionSQL.ConexionSQLServer();
+        
         this.setUndecorated(true);
         initComponents();
+        llenarCatalogo();
+        //cmbCatalogo = new JComboBox<>();
         this.setLocationRelativeTo(this);
 
         llenarCantidad();
@@ -52,23 +63,20 @@ public class Compra extends javax.swing.JFrame {
 
         lblDescripcion = new javax.swing.JLabel();
         lblCantidad = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtDesc = new javax.swing.JTextArea();
+        lblLogoDisco = new javax.swing.JLabel();
         cmbCantidad = new javax.swing.JComboBox<>();
         lblConfirmar = new javax.swing.JLabel();
         lblAtras = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
         exitTxt = new javax.swing.JLabel();
+        cmbCatalogo = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtDesc = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setText("Imagen del disco ");
-
-        txtDesc.setColumns(20);
-        txtDesc.setRows(5);
-        jScrollPane1.setViewportView(txtDesc);
+        lblLogoDisco.setText("Imagen del disco ");
 
         cmbCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una cantidad..." }));
         cmbCantidad.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,6 +87,12 @@ public class Compra extends javax.swing.JFrame {
         cmbCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbCantidadActionPerformed(evt);
+            }
+        });
+
+        lblConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblConfirmarMouseClicked(evt);
             }
         });
 
@@ -144,76 +158,95 @@ public class Compra extends javax.swing.JFrame {
             .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        cmbCatalogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona un disco..." }));
+        cmbCatalogo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbCatalogoItemStateChanged(evt);
+            }
+        });
+
+        jScrollPane2.setViewportView(txtDesc);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(183, 183, 183)
-                .addComponent(jLabel3)
-                .addGap(176, 249, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(lblConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11))
-                            .addComponent(lblCantidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cmbCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(56, 56, 56))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(cmbCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(466, 466, 466))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblLogoDisco))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(134, 134, 134))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3)
-                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(lblLogoDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
+                        .addGap(26, 26, 26)
+                        .addComponent(cmbCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
                                 .addComponent(cmbCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6))))
-                    .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAtras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblConfirmar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72))
+                                .addGap(53, 53, 53))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)))
+                        .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(lblConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbCantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbCantidadMouseClicked
-
+        llenarCantidad();
     }//GEN-LAST:event_cmbCantidadMouseClicked
 
     private void cmbCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCantidadActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cmbCantidadActionPerformed
 
     private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
@@ -241,10 +274,112 @@ public class Compra extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
 
-    public void llenarCantidad() {
-        for (int i = 0; i < 30; i++) {
-            cmbCantidad.addItem("" + i);
+    private void cmbCatalogoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbCatalogoItemStateChanged
+        txtDesc.setText("");
+        lblLogoDisco.setBounds(150, 150, 150, 150);
+        try {
+            Statement st;
+            st = con.createStatement();
+            ResultSet rs;
+            
+            String query = "select descripcion from Disco\n" +
+            "where titulo='"+cmbCatalogo.getSelectedItem().toString()+"';";
+            rs = st.executeQuery(query);
+            String descrip="";
+            while(rs.next()){
+               descrip = rs.getString("descripcion");
+               txtDesc.setText(descrip);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        if(cmbCatalogo.getSelectedItem().toString().equals("The Dark Side of the Moon")){
+            lblLogoDisco.setText("Pink Floyd");
+            SetImageLebel(lblLogoDisco, "src/imagenes/DarkSideOfTheMoon.jpg");
+        }
+        
+        if(cmbCatalogo.getSelectedItem().toString().equals("The Colour and the Shape")){
+            
+            lblLogoDisco.setText("Foo Fighters");
+            SetImageLebel(lblLogoDisco, "src/imagenes/TheColourAndTheShape.jpg");
+        }
+        
+        //enVivoBellasArtes
+        
+         if(cmbCatalogo.getSelectedItem().toString().equals("En vivo desde bellas artes")){
+            
+            lblLogoDisco.setText("Juan Gabriel");
+            SetImageLebel(lblLogoDisco, "src/imagenes/enVivoBellasArtes.jpg");
+        }
+         
+        if(cmbCatalogo.getSelectedItem().toString().equals("Definitely Maybe")){
+            
+            lblLogoDisco.setText("Oasis");
+            SetImageLebel(lblLogoDisco, "src/imagenes/definitelyMaybe.jpg");
+        }
+        
+        if(cmbCatalogo.getSelectedItem().toString().equals("Let it be")){
+            lblLogoDisco.setText("The Beatles");
+            SetImageLebel(lblLogoDisco, "src/imagenes/letItBe.jpg");
+        }
+         
+         
+    }//GEN-LAST:event_cmbCatalogoItemStateChanged
+
+    private void lblConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmarMouseClicked
+        Carrito c = new Carrito();
+        c.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblConfirmarMouseClicked
+    
+    public void llenarCatalogo(){
+        try {
+            Statement st;
+            st = con.createStatement();
+            ResultSet rs;
+            
+            String query = "Select titulo from disco;";
+            rs = st.executeQuery(query);
+            String titulo="";
+            while(rs.next()){
+               titulo = rs.getString("titulo");
+                cmbCatalogo.addItem(titulo);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+    
+    private void llenarCantidad(){
+           cmbCantidad.removeAllItems();   
+        try {
+            Statement st;
+            st = con.createStatement();
+            ResultSet rs;
+            
+            String queryCantidad = "Select inv.cantidad, d.titulo \n" +
+            "from Inventario inv\n" +
+            "inner join Disco d on (d.idDisco = inv.idDisco)\n" +
+            "where d.titulo = '"+cmbCatalogo.getSelectedItem().toString()+"';";
+            int cantidad = 0;
+            System.out.println(queryCantidad);
+            rs = st.executeQuery(queryCantidad);
+            
+            while(rs.next()){
+                cantidad = Integer.parseInt(rs.getString("cantidad"));
+            }
+            System.out.println("Cantidad de discos en la bd: "+cantidad);
+            
+            for(int i=0;i<=cantidad;i++){
+                cmbCantidad.addItem(i+"");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
@@ -284,15 +419,16 @@ public class Compra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbCantidad;
+    private javax.swing.JComboBox<String> cmbCatalogo;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAtras;
     private javax.swing.JLabel lblCantidad;
     private javax.swing.JLabel lblConfirmar;
     private javax.swing.JLabel lblDescripcion;
-    private javax.swing.JTextArea txtDesc;
+    private javax.swing.JLabel lblLogoDisco;
+    private javax.swing.JTextPane txtDesc;
     // End of variables declaration//GEN-END:variables
 }
