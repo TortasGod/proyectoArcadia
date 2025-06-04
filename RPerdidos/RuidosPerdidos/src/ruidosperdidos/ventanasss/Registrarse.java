@@ -8,6 +8,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +26,46 @@ public class Registrarse extends javax.swing.JFrame {
         SetImageLebel(lblRegistra,"src/imagenes/registrar usuario.png");
         SetImageLebel(lblUsuario,"src/imagenes/usuario.png");
         SetImageLebel(lblContrasena,"src/imagenes/contrasena.png");
+        
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        registerUser ();
     }
+});
+    }
+    
+private void registerUser  () {
+    String username = txtUsuairo.getText().trim();
+    String password = txtContraseña.getText().trim();
+    
+    // Validar que los campos no estén vacíos
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+        return; // Salir del método si hay campos vacíos
+    }
+    
+    // Validar la longitud de la contraseña
+    if (password.length() < 6) {
+        JOptionPane.showMessageDialog(this, "La contraseña debe tener al menos 6 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+        return; // Salir del método si la contraseña es demasiado corta
+    }
+    
+    // Validar que el nombre de usuario no contenga caracteres especiales
+    if (!username.matches("[a-zA-Z0-9]+")) {
+        JOptionPane.showMessageDialog(this, "El nombre de usuario solo puede contener letras y números.", "Error", JOptionPane.ERROR_MESSAGE);
+        return; // Salir del método si el nombre de usuario es inválido
+    }
+    
+    // Aquí puedes agregar la lógica para guardar el usuario en la base de datos
+    // Por ejemplo: guardarUsuarioEnBaseDeDatos(username, password);
+    
+    // Mostrar un mensaje de éxito y regresar al inicio de sesión
+    JOptionPane.showMessageDialog(this, "Usuario registrado con éxito!");
+    this.dispose(); // Cierra el marco de registro
+    new Login().setVisible(true); // Abre el marco de inicio de sesión nuevamente
+}
+ 
+ 
 
     public void SetImageLebel(JLabel labelName, String root) {
         ImageIcon image = new ImageIcon(root);

@@ -27,7 +27,18 @@ public class Login extends javax.swing.JFrame {
         SetImageLebel(lblIniciarSesion,"src/imagenes/iniciar sesion.png");
         SetImageLebel(lblUsuario,"src/imagenes/usuario.png");
         SetImageLebel(lblContrasena,"src/imagenes/contrasena.png");
+        
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        openRegistration();
     }
+});
+    }
+    private void openRegistration() {
+    Registrarse registrationFrame = new Registrarse();
+    registrationFrame.setVisible(true);
+    this.dispose(); // Cierra el marco de inicio de sesión si deseas
+}
         int xMouse, yMouse;
         public void SetImageLebel(JLabel labelName, String root){
             ImageIcon image = new ImageIcon(root);
