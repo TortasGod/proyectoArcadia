@@ -15,13 +15,50 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
      */
     public VentanaPrincipal1() {
         initComponents();
- 
-   // Listener para el botón de Registro
-        jButton1.addActionListener(e -> {
-            new Registrarse().setVisible(true);
-        });
-    }
+        
+        //SetImageLebel(lblConfirmar,"src/imagenes/confirmar.png");
+        //SetImageLebel(lblAtras,"src/imagenes/atras.png");
+        //SetImageLebel(lblCantidad,"src/imagenes/cantidad.png");
+        //SetImageLebel(exitTxt,"src/imagenes/exit.png");
 
+      // Creamos un panel con todo el contenido que queremos scrollear
+        javax.swing.JPanel panelScroll = new javax.swing.JPanel();
+        panelScroll.setLayout(null); // Usamos coordenadas absolutas
+
+        // Establecemos un tamaño más grande que el visible
+        panelScroll.setPreferredSize(new java.awt.Dimension(800, 2400));
+
+        // Mover TODO lo que ya tienes en jLayeredPane2 (menos el JScrollPane) al panelScroll
+        panelScroll.add(jLabel2);
+        panelScroll.add(jLabel3);
+        panelScroll.add(jLabel4);
+        panelScroll.add(jLabel5);
+        panelScroll.add(jLabel6);
+        panelScroll.add(jLabel7);
+        panelScroll.add(jLabel8);
+        panelScroll.add(jLabel9);
+        panelScroll.add(jLabel10);
+        panelScroll.add(jLabel11);
+        panelScroll.add(jLabel12);
+        panelScroll.add(jLabel13);
+        panelScroll.add(jLabel14);
+        panelScroll.add(jLabel15);
+        panelScroll.add(jLabel16);
+        panelScroll.add(jLabel17);
+        panelScroll.add(jLabel18);
+        panelScroll.add(jLabel19);
+        panelScroll.add(jLabel20);
+        panelScroll.add(jLabel21);
+        panelScroll.add(lblDesDark);
+        panelScroll.add(jLabel1);
+        panelScroll.add(jButton1);
+        //panelScroll.add(jButton2);
+
+        // Finalmente, ponemos ese panel dentro del scroll
+        //scroll.setViewportView(panelScroll);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,6 +69,7 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -42,12 +80,25 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        lblDesDark = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLayeredPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -84,13 +135,53 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel1.setOpaque(true);
         jLayeredPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 90));
 
-        jButton2.setText("jButton2");
-        jLayeredPane2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 870, -1, -1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 680, 400));
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor (1).png"))); // NOI18N
         jLabel9.setText("jLabel9");
-        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 450, 450));
-        jLayeredPane2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 50, 130));
+        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 410, 420));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel11.setText("jLabel9");
+        jLayeredPane2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 1890, 170, 140));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes (2).png"))); // NOI18N
+        jLabel12.setText("jLabel9");
+        jLayeredPane2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 950, 410, 410));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel13.setText("jLabel9");
+        jLayeredPane2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1380, 410, 410));
+
+        jLabel14.setText("Descripción");
+        jLayeredPane2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1850, 90, 30));
+
+        jLabel16.setText("<html>El sexto album de estudio de la aclamada banda francesa M83, Un album que nos pone en <br>posicion introspectiva sobre la vida y problemas internos de nosotros pero no importa por que al final solo estamos durmiendo.</html>");
+        jLayeredPane2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1900, 190, 130));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel15.setText("jLabel9");
+        jLayeredPane2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2060, 170, 140));
+
+        jLabel17.setText("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 760, 20));
+
+        lblDesDark.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        lblDesDark.setText("jLabel9");
+        jLayeredPane2.add(lblDesDark, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1890, 170, 140));
+
+        jLabel19.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
+        jLayeredPane2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1900, 190, 130));
+
+        jLabel18.setText("<html>Visitanos<br>Ubicanos en:<br>Ruidos_Perdidos@gmail.com<br>21°28'35.2\"N 104°51'54.7\"W</html>");
+        jLayeredPane2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 2250, 190, 130));
+
+        jLabel20.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
+        jLayeredPane2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 2070, 190, 130));
+
+        jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
+        jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.CENTER);
 
@@ -135,10 +226,20 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -147,6 +248,7 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel lblDesDark;
     // End of variables declaration//GEN-END:variables
 }
