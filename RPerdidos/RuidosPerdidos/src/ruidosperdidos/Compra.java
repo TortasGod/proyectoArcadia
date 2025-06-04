@@ -20,13 +20,16 @@ public class Compra extends javax.swing.JFrame {
      * Creates new form Compra
      */
     public Compra() {
+        this.setUndecorated(true);
         initComponents();
+        this.setLocationRelativeTo(this);
+
         llenarCantidad();
-        SetImageLebel(lblDescripcion,"src/imagenes/descripcion.png");
-        SetImageLebel(lblConfirmar,"src/imagenes/confirmar.png");
-        SetImageLebel(lblAtras,"src/imagenes/atras.png");
-        SetImageLebel(lblCantidad,"src/imagenes/cantidad.png");
-        SetImageLebel(exitTxt,"src/imagenes/exit.png");
+        SetImageLebel(lblDescripcion, "src/imagenes/descripcion.png");
+        SetImageLebel(lblConfirmar, "src/imagenes/confirmar.png");
+        SetImageLebel(lblAtras, "src/imagenes/atras.png");
+        SetImageLebel(lblCantidad, "src/imagenes/cantidad.png");
+        SetImageLebel(exitTxt, "src/imagenes/exit.png");
     }
 
     public void SetImageLebel(JLabel labelName, String root) {
@@ -36,7 +39,8 @@ public class Compra extends javax.swing.JFrame {
         labelName.setIcon(icon);
         this.repaint();
     }
-    int xMouse,yMouse;
+    int xMouse, yMouse;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -213,7 +217,7 @@ public class Compra extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbCantidadActionPerformed
 
     private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_exitTxtMouseClicked
 
     private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered

@@ -21,8 +21,9 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
-        initComponents();
-        this.setLocationRelativeTo(this);
+    this.setUndecorated(true); 
+    initComponents();          
+    this.setLocationRelativeTo(this);
 
         
         SetImageLebel(lblLogo,"src/imagenes/ruidos perdidos.png");
