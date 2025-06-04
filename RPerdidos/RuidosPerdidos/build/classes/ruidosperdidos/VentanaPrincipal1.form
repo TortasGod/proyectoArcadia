@@ -168,6 +168,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/darfpunkPor (1).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -178,6 +181,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/gorillaz (1).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -188,6 +194,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/TheStrokes (2).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -198,6 +207,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/gorillaz (1).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -228,6 +240,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/gorillaz (1).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
@@ -248,6 +263,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblDesDark">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/gorillaz (1).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>

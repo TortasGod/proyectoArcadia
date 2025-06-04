@@ -4,6 +4,11 @@
  */
 package ruidosperdidos;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author BolilloCPU
@@ -15,9 +20,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setSize(900, 850);
         // Creamos un panel con todo el contenido
         javax.swing.JPanel panelScroll = new javax.swing.JPanel();
         panelScroll.setLayout(null);
+
         panelScroll.setPreferredSize(new java.awt.Dimension(800, 2500)); // altura mayor
 
         // Añadimos todos los componentes al panelScroll
@@ -26,8 +33,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(jLabel4);
         panelScroll.add(jLabel5);
         panelScroll.add(jLabel6);
-        panelScroll.add(jLabel7);
-        panelScroll.add(jLabel8);
+        panelScroll.add(lblBusca);
+        panelScroll.add(lblBusca);
         panelScroll.add(jLabel9);
         panelScroll.add(jLabel10);
         panelScroll.add(jLabel11);
@@ -43,13 +50,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(jLabel21);
         panelScroll.add(lblDesDark);
         panelScroll.add(jButton1);
-        panelScroll.add(jLabel1);
+        panelScroll.add(fondoS);
+        panelScroll.add(txtBusqueda);
 
         // Agrega el panelScroll al JScrollPane
         scroll.setViewportView(panelScroll);
 
         // Agrega el JScrollPane al JFrame
         this.getContentPane().add(scroll, java.awt.BorderLayout.CENTER);
+        
+        SetImageLebel(lblBusca,"src/imagenes/busqueda.png");
+    }
+
+    int xMouse, yMouse;
+
+    public void SetImageLebel(JLabel labelName, String root) {
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(
+                image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
+        labelName.setIcon(icon);
+        this.repaint();
     }
 
     /**
@@ -68,9 +88,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        txtBusqueda = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -83,8 +101,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblDesDark = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        lblBusca = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        fondoS = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,15 +134,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton1.setText("Registrarse");
         jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 90, -1));
 
-        jLabel7.setText("ijijdowjofdwojfdowfjwojfwokjflwjflwjfljwl");
-        jLayeredPane2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 170, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barrachida.png"))); // NOI18N
-        jLayeredPane2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 50));
-
-        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel1.setOpaque(true);
-        jLayeredPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 90));
+        txtBusqueda.setOpaque(true);
+        txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBusquedaActionPerformed(evt);
+            }
+        });
+        jLayeredPane2.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 180, 40));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 680, 400));
@@ -165,18 +183,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel18.setText("<html>Visitanos<br>Ubicanos en:<br>Ruidos_Perdidos@gmail.com<br>21°28'35.2\"N 104°51'54.7\"W</html>");
         jLayeredPane2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 2250, 190, 130));
+        jLayeredPane2.add(lblBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 80, 40));
 
         jLabel20.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
         jLayeredPane2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 2070, 190, 130));
 
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
-        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, 730, 2410));
+
+        fondoS.setBackground(new java.awt.Color(153, 153, 153));
+        fondoS.setForeground(new java.awt.Color(153, 153, 153));
+        fondoS.setOpaque(true);
+        jLayeredPane2.add(fondoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 730, 90));
+        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 840, 70, 140));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.LINE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBusquedaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBusquedaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,8 +242,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondoS;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -233,11 +261,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLabel lblBusca;
     private javax.swing.JLabel lblDesDark;
     private javax.swing.JScrollPane scroll;
+    private javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
 }
