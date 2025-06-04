@@ -232,7 +232,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblStrokes.setText("jLabel9");
         jLayeredPane2.add(lblStrokes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1890, 150, 140));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/darfpunkPor.png"))); // NOI18N
         jLabel12.setText("jLabel9");
         jLayeredPane2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 950, 410, 410));
 
@@ -253,7 +253,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel17.setText("------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 760, 20));
 
-        lbldafpunk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor.png"))); // NOI18N
         lbldafpunk.setText("jLabel9");
         jLayeredPane2.add(lbldafpunk, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1890, 150, 140));
 

@@ -4,6 +4,15 @@
  */
 package ruidosperdidos;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author magal
@@ -14,8 +23,70 @@ public class ventana_1950 extends javax.swing.JFrame {
      * Creates new form ventana_1950
      */
     public ventana_1950() {
-        initComponents();
+        initComponents();        
+        
+        // 1. Crear un panel contenedor
+JPanel panelContenido = new JPanel();
+panelContenido.setLayout(null); // permite usar setBounds
+panelContenido.setPreferredSize(new Dimension(800, 2400)); // ajusta la altura si agregas más cosas
+
+// 2. Mover todos los componentes agregados a getContentPane() hacia panelContenido
+panelContenido.add(jLabel4);
+panelContenido.add(lblElvis);
+panelContenido.add(lblBerry);
+panelContenido.add(jLabel7);
+panelContenido.add(jLabel16);
+panelContenido.add(lblRevolver);
+panelContenido.add(jLabel18);
+panelContenido.add(lblRolin);
+panelContenido.add(lblQueen);
+panelContenido.add(lblPinFloy);
+panelContenido.add(jLabel23);
+panelContenido.add(jLabel24);
+panelContenido.add(lblMaicol);
+panelContenido.add(lblGuns);
+panelContenido.add(jLabel33);
+panelContenido.add(jLabel34);
+panelContenido.add(lblJam);
+panelContenido.add(lblTupac);
+panelContenido.add(jLabel37);
+panelContenido.add(jLabel38);
+        panelContenido.add(header);
+        panelContenido.add(exitBtn);
+        panelContenido.add(exitTxt);
+
+// 3. Crear el JScrollPane y agregarle el panel
+JScrollPane scroll = new JScrollPane(panelContenido);
+scroll.setBounds(0, 0, 760, 700); // tamaño visible del scroll
+scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+// 4. Agregar el JScrollPane al JFrame
+this.getContentPane().removeAll(); // limpia todo lo que había
+this.getContentPane().setLayout(null);
+this.getContentPane().add(scroll);
+this.setSize(780, 720); // tamaño de la ventana visible
+
+        SetImageLebel(lblElvis,"src/imagenes/elvis.png");
+        SetImageLebel(lblBerry,"src/imagenes/Chuck Berry.png");
+        SetImageLebel(lblGuns,"src/imagenes/guns n roses.png");
+        SetImageLebel(lblJam,"src/imagenes/ten.png");
+        SetImageLebel(lblMaicol,"src/imagenes/michelYackson.png");
+        SetImageLebel(lblPinFloy,"src/imagenes/pinkFloyd.png");
+        SetImageLebel(lblQueen,"src/imagenes/queen.png");
+        SetImageLebel(lblRevolver,"src/imagenes/revolver.png");
+        SetImageLebel(lblRolin,"src/imagenes/after-Math.png");
+        SetImageLebel(lblTupac,"src/imagenes/2pac.png");
+                SetImageLebel(exitTxt,"src/imagenes/exit.png");
+        
     }
+        int xMouse, yMouse;
+        public void SetImageLebel(JLabel labelName, String root){
+            ImageIcon image = new ImageIcon(root);
+            Icon icon = new ImageIcon(
+            image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
+            labelName.setIcon(icon);
+            this.repaint();
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,44 +103,30 @@ public class ventana_1950 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
+        exitBtn = new javax.swing.JPanel();
+        exitTxt = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblElvis = new javax.swing.JLabel();
+        lblBerry = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        lblRevolver = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        lblRolin = new javax.swing.JLabel();
+        lblQueen = new javax.swing.JLabel();
+        lblPinFloy = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
+        lblMaicol = new javax.swing.JLabel();
+        lblGuns = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
+        lblJam = new javax.swing.JLabel();
+        lblTupac = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barrachida.png"))); // NOI18N
 
@@ -86,69 +143,100 @@ public class ventana_1950 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barrachida.png"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 50));
+        header.setBackground(new java.awt.Color(255, 255, 255));
+        header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerMouseDragged(evt);
+            }
+        });
+        header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerMousePressed(evt);
+            }
+        });
 
-        jButton1.setText("Registrarse");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 90, -1));
+        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("1950");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 37, -1));
+        exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        exitTxt.setOpaque(true);
+        exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
+        exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitTxtMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitTxtMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitTxtMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitBtnLayout = new javax.swing.GroupLayout(exitBtn);
+        exitBtn.setLayout(exitBtnLayout);
+        exitBtnLayout.setHorizontalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 52, Short.MAX_VALUE)
+            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(exitBtnLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        exitBtnLayout.setVerticalGroup(
+            exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 52, Short.MAX_VALUE)
+            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(exitBtnLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setText("<html>El álbum \"Elvis Presley\" de 1956 es considerado uno de los discos más emblemáticos de la historia del rock and roll. Este álbum, lanzado por RCA Victor, incluye canciones como \"Old Shep\" y \"Heartbreak Hotel\", y fue un hito en la carrera de Elvis Presley,<html>");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, 140));
 
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        lblElvis.setText("jLabel5");
+        getContentPane().add(lblElvis, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, 120));
 
-        jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
+        lblBerry.setText("jLabel6");
+        getContentPane().add(lblBerry, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 130, 120));
 
         jLabel7.setText("<html>After School Session es el primer álbum de estudio del artista de rock and roll Chuck Berry, lanzado en mayo de 1957 por Chess Records. Con la excepción de dos pistas, \"Roly Poly\" y \"Berry Pickin'\"<html>");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 280, 110));
 
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("1980");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 30, -1));
-
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("1960");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 30, -1));
-
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("1990");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
-
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("1970");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
-
         jLabel16.setText("<html>Revolver es el séptimo álbum de estudio de la banda de rock The Beatles lanzado al mercado el 5 de agosto de 1966 por EMI.<html>");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 620, 260, 110));
 
-        jLabel17.setText("jLabel17");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 670, -1, -1));
+        lblRevolver.setText("jLabel17");
+        getContentPane().add(lblRevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 620, 140, 130));
 
         jLabel18.setText("<html>Aftermath fue el primer álbum de The Rolling Stones que se registra en su totalidad en los Estados Unidos<html>");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 810, 230, 90));
 
-        jLabel19.setText("jLabel19");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 850, -1, -1));
+        lblRolin.setText("jLabel19");
+        getContentPane().add(lblRolin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 820, 130, 120));
 
-        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 90));
+        lblQueen.setText("jLabel21");
+        getContentPane().add(lblQueen, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1060, 120, 120));
 
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("1960");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 30, -1));
-
-        jLabel21.setText("jLabel21");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1090, -1, -1));
-
-        jLabel22.setText("jLabel22");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1330, -1, -1));
+        lblPinFloy.setText("jLabel22");
+        getContentPane().add(lblPinFloy, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1300, 120, 110));
 
         jLabel23.setText("<html>El álbum toma el nombre de la película Una noche en la ópera de los hermanos Marx, que la banda vio una noche en el complejo de estudios durante la grabación.<html>");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1050, 280, 100));
@@ -156,44 +244,11 @@ public class ventana_1950 extends javax.swing.JFrame {
         jLabel24.setText("<html>The Dark Side of the Moon es el octavo álbum de estudio de la banda de rock progresivo Pink Floyd, lanzado el 1 de marzo de 1973 por Harvest Records en el Reino Unido<html>");
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1280, 240, 130));
 
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("1970");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
+        lblMaicol.setText("jLabel31");
+        getContentPane().add(lblMaicol, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1540, 140, 120));
 
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("1970");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
-
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setText("1970");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 30, -1));
-
-        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setText("1970");
-        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 30, -1));
-
-        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setText("1960");
-        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 30, -1));
-
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("1950");
-        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 37, -1));
-
-        jButton2.setText("Registrarse");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 90, -1));
-
-        jButton3.setText("Registrarse");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 90, -1));
-
-        jButton4.setText("Registrarse");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 90, -1));
-
-        jLabel31.setText("jLabel31");
-        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1560, -1, -1));
-
-        jLabel32.setText("jLabel32");
-        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1750, -1, -1));
+        lblGuns.setText("jLabel32");
+        getContentPane().add(lblGuns, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1720, 140, 140));
 
         jLabel33.setText("<html>\"Thriller\" de Michael Jackson, lanzado el 30 de noviembre de 1982, es considerado el disco más vendido de la historia. Este álbum, que fue el sexto trabajo solista de Michael Jackson<html>");
         getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1520, 310, 120));
@@ -201,20 +256,46 @@ public class ventana_1950 extends javax.swing.JFrame {
         jLabel34.setText("<html>Apetito por la destrucción — es el álbum debut de la banda estadounidense de hard rock Guns N' Roses. Fue publicado por la compañía discográfica Geffen Records <html>");
         getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1660, 280, 200));
 
-        jLabel35.setText("jLabel35");
-        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 2020, -1, -1));
+        lblJam.setText("jLabel35");
+        getContentPane().add(lblJam, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1950, 120, 110));
 
-        jLabel36.setText("jLabel36");
-        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 2230, -1, -1));
+        lblTupac.setText("jLabel36");
+        getContentPane().add(lblTupac, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 2150, 130, 110));
 
         jLabel37.setText("<html> Ten es el álbum debut de estudio de la banda de grunge estadounidense Pearl Jam, lanzado el 27 de agosto de 1991, por la discográfica Epic Records.<html>");
         getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1970, 230, 100));
 
         jLabel38.setText("<html> All Eyez on Me es el cuarto álbum de estudio del rapero 2Pac, lanzado el 13 de febrero de 1996. Fue el último álbum de 2Pac con vida<html>");
         getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 2200, 210, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 880, 50, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitTxtMouseClicked
+
+    private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
+        exitBtn.setBackground(Color.red);
+        exitTxt.setForeground(Color.white);
+    }//GEN-LAST:event_exitTxtMouseEntered
+
+    private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
+        exitBtn.setBackground(Color.white);
+        exitTxt.setForeground(Color.black);
+    }//GEN-LAST:event_exitTxtMouseExited
+
+    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerMouseDragged
+
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerMousePressed
 
     /**
      * @param args the command line arguments
@@ -252,49 +333,35 @@ public class ventana_1950 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JPanel exitBtn;
+    private javax.swing.JLabel exitTxt;
+    private javax.swing.JPanel header;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBerry;
+    private javax.swing.JLabel lblElvis;
+    private javax.swing.JLabel lblGuns;
+    private javax.swing.JLabel lblJam;
+    private javax.swing.JLabel lblMaicol;
+    private javax.swing.JLabel lblPinFloy;
+    private javax.swing.JLabel lblQueen;
+    private javax.swing.JLabel lblRevolver;
+    private javax.swing.JLabel lblRolin;
+    private javax.swing.JLabel lblTupac;
     // End of variables declaration//GEN-END:variables
 }

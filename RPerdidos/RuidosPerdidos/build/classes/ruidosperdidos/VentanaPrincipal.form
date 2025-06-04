@@ -250,7 +250,7 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/darfpunkPor.png"/>
+              <Image iconType="3" name="/imagenes/darfpunkPor.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
@@ -318,9 +318,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbldafpunk">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/darfpunkPor.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel9"/>
           </Properties>
           <Constraints>
