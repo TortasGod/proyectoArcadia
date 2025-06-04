@@ -21,6 +21,7 @@ public class Registrarse extends javax.swing.JFrame {
      * Creates new form Registrarse
      */
     public Registrarse() {
+        this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(this);
         
@@ -222,7 +223,7 @@ private void registerUser  () {
     }//GEN-LAST:event_txtContraseñaActionPerformed
 
     private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_exitTxtMouseClicked
 
     private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered

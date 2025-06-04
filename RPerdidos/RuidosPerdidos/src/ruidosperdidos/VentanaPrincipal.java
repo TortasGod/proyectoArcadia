@@ -32,77 +32,114 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        lblDesDark = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+
+        jLayeredPane2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("1950");
-        jLayeredPane2.add(jLabel2);
-        jLabel2.setBounds(110, 70, 37, 16);
+        jLayeredPane2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 37, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("1960");
-        jLayeredPane2.add(jLabel3);
-        jLabel3.setBounds(160, 70, 30, 16);
+        jLayeredPane2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 30, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("1970");
-        jLayeredPane2.add(jLabel6);
-        jLabel6.setBounds(200, 70, 30, 16);
+        jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("1980");
-        jLayeredPane2.add(jLabel5);
-        jLabel5.setBounds(250, 70, 30, 16);
+        jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 30, -1));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("1990");
-        jLayeredPane2.add(jLabel4);
-        jLabel4.setBounds(300, 70, 30, 16);
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jLayeredPane2.add(jTextField1);
-        jTextField1.setBounds(100, 20, 190, 30);
+        jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
 
         jButton1.setText("Registrarse");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jLayeredPane2.add(jButton1);
-        jButton1.setBounds(630, 10, 90, 23);
+        jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 90, -1));
+
+        jLabel7.setText("ijijdowjofdwojfdowfjwojfwokjflwjflwjfljwl");
+        jLayeredPane2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 170, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barrachida.png"))); // NOI18N
-        jLayeredPane2.add(jLabel8);
-        jLabel8.setBounds(80, 10, 250, 50);
+        jLayeredPane2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 50));
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setOpaque(true);
-        jLayeredPane2.add(jLabel1);
-        jLabel1.setBounds(0, 0, 740, 90);
+        jLayeredPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 90));
 
-        getContentPane().add(jLayeredPane2, java.awt.BorderLayout.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
+        jLayeredPane2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 680, 400));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/darfpunkPor (1).png"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 410, 420));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel11.setText("jLabel9");
+        jLayeredPane2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 1890, 170, 140));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes (2).png"))); // NOI18N
+        jLabel12.setText("jLabel9");
+        jLayeredPane2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 950, 410, 410));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel13.setText("jLabel9");
+        jLayeredPane2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1380, 410, 410));
+
+        jLabel14.setText("Descripción");
+        jLayeredPane2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1850, 90, 30));
+
+        jLabel16.setText("<html>El sexto album de estudio de la aclamada banda francesa M83, Un album que nos pone en <br>posicion introspectiva sobre la vida y problemas internos de nosotros pero no importa por que al final solo estamos durmiendo.</html>");
+        jLayeredPane2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1900, 190, 130));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        jLabel15.setText("jLabel9");
+        jLayeredPane2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 2060, 170, 140));
+
+        jLabel17.setText("------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 760, 20));
+
+        lblDesDark.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz (1).png"))); // NOI18N
+        lblDesDark.setText("jLabel9");
+        jLayeredPane2.add(lblDesDark, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1890, 170, 140));
+
+        jLabel19.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
+        jLayeredPane2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1900, 190, 130));
+
+        jLabel18.setText("<html>Visitanos<br>Ubicanos en:<br>Ruidos_Perdidos@gmail.com<br>21°28'35.2\"N 104°51'54.7\"W</html>");
+        jLayeredPane2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 2250, 190, 130));
+
+        jLabel20.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
+        jLayeredPane2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 2070, 190, 130));
+
+        jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
+        jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
+
+        getContentPane().add(jLayeredPane2, java.awt.BorderLayout.LINE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,13 +179,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblDesDark;
     // End of variables declaration//GEN-END:variables
 }

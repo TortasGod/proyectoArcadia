@@ -3,11 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ruidosperdidos;
-import java.awt.Color;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+
 /**
  *
  * @author BolilloCPU
@@ -19,7 +15,7 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
      */
     public VentanaPrincipal1() {
         initComponents();
-        SetImageLebel(lblDesDark,"src/default package/darfpunkPor(1).png");
+        
         //SetImageLebel(lblConfirmar,"src/imagenes/confirmar.png");
         //SetImageLebel(lblAtras,"src/imagenes/atras.png");
         //SetImageLebel(lblCantidad,"src/imagenes/cantidad.png");
@@ -59,17 +55,10 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         //panelScroll.add(jButton2);
 
         // Finalmente, ponemos ese panel dentro del scroll
-        scroll.setViewportView(panelScroll);
+        //scroll.setViewportView(panelScroll);
     }
     
-     public void SetImageLebel(JLabel labelName, String root) {
-        ImageIcon image = new ImageIcon(root);
-        Icon icon = new ImageIcon(
-                image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-        labelName.setIcon(icon);
-        this.repaint();
-    }
-
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -105,7 +94,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        scroll = new javax.swing.JScrollPane();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -194,7 +182,6 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
 
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
-        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 750, 2450));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.CENTER);
 
@@ -263,6 +250,5 @@ public class VentanaPrincipal1 extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblDesDark;
-    private javax.swing.JScrollPane scroll;
     // End of variables declaration//GEN-END:variables
 }
