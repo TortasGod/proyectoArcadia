@@ -6,9 +6,18 @@ package ruidosperdidos;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
 import ruidosperdidos.Registrarse;
 
 /**
@@ -16,16 +25,18 @@ import ruidosperdidos.Registrarse;
  * @author floppa pc
  */
 public class Login extends javax.swing.JFrame {
-
+    public static Connection con;
+    
     /**
      * Creates new form Login
      */
     public Login() {
-    this.setUndecorated(true); 
-    initComponents();          
-    this.setLocationRelativeTo(this);
+        this.setUndecorated(true); 
+        initComponents();          
+           
+       this.setLocationRelativeTo(this);
 
-        
+        con = ConexionSQL.ConexionSQLServer();
         SetImageLebel(lblLogo,"src/imagenes/ruidos perdidos.png");
         SetImageLebel(lblIniciarSesion,"src/imagenes/iniciar sesion.png");
         SetImageLebel(lblUsuario,"src/imagenes/usuario.png");
@@ -60,9 +71,9 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         lblUsuario = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         lblContrasena = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
@@ -74,19 +85,24 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtCorreoActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtContraseñaActionPerformed(evt);
             }
         });
 
         jButton1.setText("Iniciar Sesion");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -171,8 +187,8 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jButton2))
                     .addComponent(lblContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                        .addComponent(txtCorreo, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
@@ -193,11 +209,11 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(lblContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
@@ -210,13 +226,13 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtCorreoActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtContraseñaActionPerformed
 
     private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
         System.exit(0);
@@ -243,6 +259,58 @@ public class Login extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String correo = txtCorreo.getText();
+        String contraseña = String.valueOf(txtContraseña.getText());
+
+        //Validar si los campos estan vacios
+        if (correo.isEmpty() || contraseña.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor ingresa tu correo y contraseña");
+            return;
+        }
+        
+        Connection con = ConexionSQL.ConexionSQLServer();
+
+        //Validar que la conexion no sea nula
+        if (con == null) {
+            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos");
+        }
+
+        //Consulta sql para validar las credenciales
+        if (con == null) {
+            JOptionPane.showMessageDialog(this, "Error al conectar con la base de datos");
+            return;
+        }
+        String query = "SELECT CORREO, CONTRA FROM USUARIO WHERE CORREO ="+"'"+txtCorreo.getText()+"'"+"AND CONTRA ="+"'"+txtContraseña.getText()+"';";
+        Statement st;
+        ResultSet rs;
+        String correoSQL = "";
+        String contraSQL = "";
+        
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery(query);
+            
+            while(rs.next()){
+                correoSQL = rs.getString("correo");
+                contraSQL = rs.getString("contra");
+            }
+            
+            if(correoSQL.equals(txtCorreo.getText()) && (contraSQL.equals(txtContraseña.getText()))){
+                showMessageDialog(null,"Credenciales correctas, bienvenido");
+                VentanaPrincipal vp = new VentanaPrincipal();
+                vp.setVisible(true);
+                this.dispose();
+            }else{
+                System.out.println("Credenciales incorrectas");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //Consulta SQL para validar las credenciales
+    }//GEN-LAST:event_jButton1MouseClicked
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -285,11 +353,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblContrasena;
     private javax.swing.JLabel lblIniciarSesion;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,17 +10,25 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author floppa pc
  */
 public class Registrarse extends javax.swing.JFrame {
-
+    public static Connection con;
     /**
      * Creates new form Registrarse
      */
     public Registrarse() {
+        
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(this);
@@ -39,32 +47,26 @@ public class Registrarse extends javax.swing.JFrame {
     int xMouse,yMouse;
     
 private void registerUser  () {
-    String username = txtUsuairo.getText().trim();
-    String password = txtContraseña.getText().trim();
+    String username = txtUsuario.getText();
+    String password = txtContraseña.getText();
+    con = ConexionSQL.ConexionSQLServer();
     
-    // Validar que los campos no estén vacíos
-    if (username.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
-        return; // Salir del método si hay campos vacíos
-    }
-    
-    // Validar la longitud de la contraseña
-    if (password.length() < 6) {
-        JOptionPane.showMessageDialog(this, "La contraseña debe tener al menos 6 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
-        return; // Salir del método si la contraseña es demasiado corta
-    }
-    
-    // Validar que el nombre de usuario no contenga caracteres especiales
-    if (!username.matches("[a-zA-Z0-9]+")) {
-        JOptionPane.showMessageDialog(this, "El nombre de usuario solo puede contener letras y números.", "Error", JOptionPane.ERROR_MESSAGE);
-        return; // Salir del método si el nombre de usuario es inválido
-    }
-    
-    // Aquí puedes agregar la lógica para guardar el usuario en la base de datos
-    // Por ejemplo: guardarUsuarioEnBaseDeDatos(username, password);
-    
-    // Mostrar un mensaje de éxito y regresar al inicio de sesión
-    JOptionPane.showMessageDialog(this, "Usuario registrado con éxito!");
+          try {
+            String correoNuevo = txtUsuario.getText();
+            String contraNueva = txtContraseña.getText();
+            
+            String query = "Insert into usuario "
+                    + "values("+"'"+correoNuevo+"',"+"'"+contraNueva+"')";
+            
+            System.out.println(query);
+            
+            Statement st;
+            st = con.createStatement();
+            //ResultSet rs;
+            st.execute(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
+        }
     this.dispose(); // Cierra el marco de registro
     new Login().setVisible(true); // Abre el marco de inicio de sesión nuevamente
 }
@@ -90,7 +92,7 @@ private void registerUser  () {
 
         lblRegistra = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
-        txtUsuairo = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         lblContrasena = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
@@ -107,6 +109,11 @@ private void registerUser  () {
         });
 
         btnRegistrar.setText("Registrar");
+        btnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegistrarMouseClicked(evt);
+            }
+        });
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -179,7 +186,7 @@ private void registerUser  () {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsuairo, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRegistrar)
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,7 +212,7 @@ private void registerUser  () {
                 .addGap(34, 34, 34)
                 .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsuairo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(lblContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -246,6 +253,28 @@ private void registerUser  () {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
+
+    private void btnRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseClicked
+        con = ConexionSQL.ConexionSQLServer();
+        try {
+            String correoNuevo = txtUsuario.getText();
+            String contraNueva = txtContraseña.getText();
+            
+            String query = "Insert into usuario correo,contra "
+                    + "values("+"'"+correoNuevo+"',"+"'"+contraNueva+"')";
+            
+            System.out.println(query);
+            
+            Statement st;
+            st = con.createStatement();
+            //ResultSet rs;
+            st.execute(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       
+    }//GEN-LAST:event_btnRegistrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -291,6 +320,6 @@ private void registerUser  () {
     private javax.swing.JLabel lblRegistra;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JTextField txtContraseña;
-    private javax.swing.JTextField txtUsuairo;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
