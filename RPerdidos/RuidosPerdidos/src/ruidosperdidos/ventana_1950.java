@@ -28,7 +28,7 @@ public class ventana_1950 extends javax.swing.JFrame {
         // 1. Crear un panel contenedor
 JPanel panelContenido = new JPanel();
 panelContenido.setLayout(null); // permite usar setBounds
-panelContenido.setPreferredSize(new Dimension(800, 2400)); // ajusta la altura si agregas más cosas
+panelContenido.setPreferredSize(new Dimension(800, 2900)); // ajusta la altura si agregas más cosas
 
 // 2. Mover todos los componentes agregados a getContentPane() hacia panelContenido
 panelContenido.add(jLabel4);
@@ -209,64 +209,64 @@ this.setSize(780, 720); // tamaño de la ventana visible
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setText("<html>El álbum \"Elvis Presley\" de 1956 es considerado uno de los discos más emblemáticos de la historia del rock and roll. Este álbum, lanzado por RCA Victor, incluye canciones como \"Old Shep\" y \"Heartbreak Hotel\", y fue un hito en la carrera de Elvis Presley,<html>");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 260, 140));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 260, 140));
 
         lblElvis.setText("jLabel5");
-        getContentPane().add(lblElvis, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 130, 120));
+        getContentPane().add(lblElvis, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 220, 200));
 
         lblBerry.setText("jLabel6");
-        getContentPane().add(lblBerry, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 130, 120));
+        getContentPane().add(lblBerry, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 220, 230));
 
         jLabel7.setText("<html>After School Session es el primer álbum de estudio del artista de rock and roll Chuck Berry, lanzado en mayo de 1957 por Chess Records. Con la excepción de dos pistas, \"Roly Poly\" y \"Berry Pickin'\"<html>");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 280, 110));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 280, 110));
 
         jLabel16.setText("<html>Revolver es el séptimo álbum de estudio de la banda de rock The Beatles lanzado al mercado el 5 de agosto de 1966 por EMI.<html>");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 620, 260, 110));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 260, 110));
 
         lblRevolver.setText("jLabel17");
-        getContentPane().add(lblRevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 620, 140, 130));
+        getContentPane().add(lblRevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 220, 200));
 
         jLabel18.setText("<html>Aftermath fue el primer álbum de The Rolling Stones que se registra en su totalidad en los Estados Unidos<html>");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 810, 230, 90));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 920, 230, 90));
 
         lblRolin.setText("jLabel19");
-        getContentPane().add(lblRolin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 820, 130, 120));
+        getContentPane().add(lblRolin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 900, 220, 200));
 
         lblQueen.setText("jLabel21");
-        getContentPane().add(lblQueen, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1060, 120, 120));
+        getContentPane().add(lblQueen, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 1180, 230, 220));
 
         lblPinFloy.setText("jLabel22");
-        getContentPane().add(lblPinFloy, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1300, 120, 110));
+        getContentPane().add(lblPinFloy, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1460, 240, 220));
 
         jLabel23.setText("<html>El álbum toma el nombre de la película Una noche en la ópera de los hermanos Marx, que la banda vio una noche en el complejo de estudios durante la grabación.<html>");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1050, 280, 100));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1190, 280, 100));
 
         jLabel24.setText("<html>The Dark Side of the Moon es el octavo álbum de estudio de la banda de rock progresivo Pink Floyd, lanzado el 1 de marzo de 1973 por Harvest Records en el Reino Unido<html>");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1280, 240, 130));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1470, 240, 130));
 
         lblMaicol.setText("jLabel31");
-        getContentPane().add(lblMaicol, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1540, 140, 120));
+        getContentPane().add(lblMaicol, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1770, 250, 230));
 
         lblGuns.setText("jLabel32");
-        getContentPane().add(lblGuns, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1720, 140, 140));
+        getContentPane().add(lblGuns, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2040, 250, 240));
 
         jLabel33.setText("<html>\"Thriller\" de Michael Jackson, lanzado el 30 de noviembre de 1982, es considerado el disco más vendido de la historia. Este álbum, que fue el sexto trabajo solista de Michael Jackson<html>");
-        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1520, 310, 120));
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1770, 310, 120));
 
         jLabel34.setText("<html>Apetito por la destrucción — es el álbum debut de la banda estadounidense de hard rock Guns N' Roses. Fue publicado por la compañía discográfica Geffen Records <html>");
-        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1660, 280, 200));
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 2030, 280, 110));
 
         lblJam.setText("jLabel35");
-        getContentPane().add(lblJam, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 1950, 120, 110));
+        getContentPane().add(lblJam, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2320, 250, 230));
 
         lblTupac.setText("jLabel36");
-        getContentPane().add(lblTupac, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 2150, 130, 110));
+        getContentPane().add(lblTupac, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2610, 250, 240));
 
         jLabel37.setText("<html> Ten es el álbum debut de estudio de la banda de grunge estadounidense Pearl Jam, lanzado el 27 de agosto de 1991, por la discográfica Epic Records.<html>");
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 1970, 230, 100));
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 2310, 230, 100));
 
         jLabel38.setText("<html> All Eyez on Me es el cuarto álbum de estudio del rapero 2Pac, lanzado el 13 de febrero de 1996. Fue el último álbum de 2Pac con vida<html>");
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 2200, 210, 70));
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 2610, 210, 70));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 880, 50, 60));
 
         pack();
