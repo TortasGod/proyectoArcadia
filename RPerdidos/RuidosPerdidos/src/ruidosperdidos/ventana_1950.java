@@ -54,6 +54,7 @@ panelContenido.add(jLabel38);
         panelContenido.add(header);
         panelContenido.add(exitBtn);
         panelContenido.add(exitTxt);
+        panelContenido.add(jLabel1);
 
 // 3. Crear el JScrollPane y agregarle el panel
 JScrollPane scroll = new JScrollPane(panelContenido);
@@ -126,6 +127,7 @@ this.setSize(780, 720); // tamaño de la ventana visible
         lblTupac = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barrachida.png"))); // NOI18N
@@ -143,7 +145,7 @@ this.setSize(780, 720); // tamaño de la ventana visible
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        header.setBackground(new java.awt.Color(255, 255, 255));
+        header.setBackground(new java.awt.Color(204, 204, 204));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 headerMouseDragged(evt);
@@ -155,7 +157,7 @@ this.setSize(780, 720); // tamaño de la ventana visible
             }
         });
 
-        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+        exitBtn.setBackground(new java.awt.Color(204, 204, 204));
 
         exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -178,21 +180,13 @@ this.setSize(780, 720); // tamaño de la ventana visible
         exitBtn.setLayout(exitBtnLayout);
         exitBtnLayout.setHorizontalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 52, Short.MAX_VALUE)
-            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(exitBtnLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(exitBtnLayout.createSequentialGroup()
+                .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         exitBtnLayout.setVerticalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 52, Short.MAX_VALUE)
-            .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(exitBtnLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+            .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
@@ -208,26 +202,44 @@ this.setSize(780, 720); // tamaño de la ventana visible
 
         getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("<html>El álbum \"Elvis Presley\" de 1956 es considerado uno de los discos más emblemáticos de la historia del rock and roll. Este álbum, lanzado por RCA Victor, incluye canciones como \"Old Shep\" y \"Heartbreak Hotel\", y fue un hito en la carrera de Elvis Presley,<html>");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 260, 140));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 350, 140));
 
         lblElvis.setText("jLabel5");
+        lblElvis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblElvisMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblElvis, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 220, 200));
 
         lblBerry.setText("jLabel6");
+        lblBerry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBerryMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblBerry, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 220, 230));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("<html>After School Session es el primer álbum de estudio del artista de rock and roll Chuck Berry, lanzado en mayo de 1957 por Chess Records. Con la excepción de dos pistas, \"Roly Poly\" y \"Berry Pickin'\"<html>");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 280, 110));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 320, 110));
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("<html>Revolver es el séptimo álbum de estudio de la banda de rock The Beatles lanzado al mercado el 5 de agosto de 1966 por EMI.<html>");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 260, 110));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 290, 110));
 
         lblRevolver.setText("jLabel17");
         getContentPane().add(lblRevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 220, 200));
 
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("<html>Aftermath fue el primer álbum de The Rolling Stones que se registra en su totalidad en los Estados Unidos<html>");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 920, 230, 90));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 920, 280, 90));
 
         lblRolin.setText("jLabel19");
         getContentPane().add(lblRolin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 900, 220, 200));
@@ -238,35 +250,66 @@ this.setSize(780, 720); // tamaño de la ventana visible
         lblPinFloy.setText("jLabel22");
         getContentPane().add(lblPinFloy, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 1460, 240, 220));
 
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("<html>El álbum toma el nombre de la película Una noche en la ópera de los hermanos Marx, que la banda vio una noche en el complejo de estudios durante la grabación.<html>");
         getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1190, 280, 100));
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("<html>The Dark Side of the Moon es el octavo álbum de estudio de la banda de rock progresivo Pink Floyd, lanzado el 1 de marzo de 1973 por Harvest Records en el Reino Unido<html>");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1470, 240, 130));
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1470, 280, 130));
 
         lblMaicol.setText("jLabel31");
         getContentPane().add(lblMaicol, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1770, 250, 230));
 
         lblGuns.setText("jLabel32");
+        lblGuns.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblGunsMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblGuns, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2040, 250, 240));
 
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("<html>\"Thriller\" de Michael Jackson, lanzado el 30 de noviembre de 1982, es considerado el disco más vendido de la historia. Este álbum, que fue el sexto trabajo solista de Michael Jackson<html>");
         getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1770, 310, 120));
 
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("<html>Apetito por la destrucción — es el álbum debut de la banda estadounidense de hard rock Guns N' Roses. Fue publicado por la compañía discográfica Geffen Records <html>");
-        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 2030, 280, 110));
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 2030, 340, 110));
 
         lblJam.setText("jLabel35");
+        lblJam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblJamMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblJam, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2320, 250, 230));
 
         lblTupac.setText("jLabel36");
         getContentPane().add(lblTupac, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2610, 250, 240));
 
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("<html> Ten es el álbum debut de estudio de la banda de grunge estadounidense Pearl Jam, lanzado el 27 de agosto de 1991, por la discográfica Epic Records.<html>");
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 2310, 230, 100));
+        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 2390, 360, 100));
 
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("<html> All Eyez on Me es el cuarto álbum de estudio del rapero 2Pac, lanzado el 13 de febrero de 1996. Fue el último álbum de 2Pac con vida<html>");
-        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 2610, 210, 70));
+        getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 2670, 330, 100));
+
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 2900));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 880, 50, 60));
 
         pack();
@@ -296,6 +339,30 @@ this.setSize(780, 720); // tamaño de la ventana visible
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
+
+    private void lblElvisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblElvisMouseClicked
+             VentanaElvis e = new VentanaElvis();
+            e.setVisible(true);
+    }//GEN-LAST:event_lblElvisMouseClicked
+
+    private void lblBerryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBerryMouseClicked
+        VentanaChuck e = new VentanaChuck();
+            e.setVisible(true);
+    }//GEN-LAST:event_lblBerryMouseClicked
+
+    private void lblJamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJamMouseClicked
+     VentanaTen e = new VentanaTen();
+            e.setVisible(true);
+    }//GEN-LAST:event_lblJamMouseClicked
+
+    private void lblGunsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGunsMouseClicked
+       VentanaGuns e = new VentanaGuns();
+            e.setVisible(true);
+    }//GEN-LAST:event_lblGunsMouseClicked
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel24MouseClicked
 
     /**
      * @param args the command line arguments
@@ -337,6 +404,7 @@ this.setSize(780, 720); // tamaño de la ventana visible
     private javax.swing.JLabel exitTxt;
     private javax.swing.JPanel header;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
