@@ -421,7 +421,7 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
 
     private void lblCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCarritoMouseClicked
         Carrito c = new Carrito();
-        c.setVisible(true); //
+        c.setVisible(true); 
         this.dispose();
     }//GEN-LAST:event_lblCarritoMouseClicked
 

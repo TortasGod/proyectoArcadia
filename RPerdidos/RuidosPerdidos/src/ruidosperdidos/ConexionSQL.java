@@ -10,7 +10,7 @@ public class ConexionSQL {
     
     public static Connection ConexionSQLServer() {
 
-        String conexionUr1 = "jdbc:sqlserver://localhost:1433;"
+        String conexionUr1 = "jdbc:sqlserver://localhost:1434;"
                 + "database=RuidosPerdidos;"
                 + "user=sa;"
                 + "password=Tecnologico1;"
