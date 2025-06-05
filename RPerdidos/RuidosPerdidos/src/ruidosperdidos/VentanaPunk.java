@@ -140,10 +140,10 @@ public class VentanaPunk extends javax.swing.JFrame {
         lblKirby.setBackground(new java.awt.Color(102, 102, 102));
         getContentPane().add(lblKirby, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 521, 409));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DraftPunk");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 70, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 140, 30));
 
         btnBoton1.setBackground(new java.awt.Color(51, 51, 51));
         btnBoton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N

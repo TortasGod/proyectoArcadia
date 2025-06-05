@@ -95,25 +95,46 @@ private void registerUser  () {
         txtUsuario = new javax.swing.JTextField();
         lblContrasena = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
         exitTxt = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(lblRegistra, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 21, 187, 78));
+        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 133, 106, 44));
 
+        txtUsuario.setBackground(new java.awt.Color(153, 153, 153));
+        txtUsuario.setOpaque(true);
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 183, 126, -1));
+        getContentPane().add(lblContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 232, 96, 40));
+
+        txtContraseña.setBackground(new java.awt.Color(153, 153, 153));
+        txtContraseña.setOpaque(true);
         txtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContraseñaActionPerformed(evt);
             }
         });
+        getContentPane().add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 278, 126, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Nota.gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 200, 200));
+
+        btnRegistrar.setBackground(new java.awt.Color(51, 51, 51));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar");
-        btnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegistrarMouseClicked(evt);
+        btnRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 100, 30));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -127,7 +148,7 @@ private void registerUser  () {
             }
         });
 
-        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+        exitBtn.setBackground(new java.awt.Color(153, 153, 153));
 
         exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -162,65 +183,32 @@ private void registerUser  () {
             .addGroup(exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(exitBtnLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRegistrar)
-                            .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(lblRegistra, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(lblRegistra, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34)
-                .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(lblContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnRegistrar)
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
+
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, 50));
+
+        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -254,8 +242,8 @@ private void registerUser  () {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
 
-    private void btnRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseClicked
-        con = ConexionSQL.ConexionSQLServer();
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+ con = ConexionSQL.ConexionSQLServer();
         try {
             String correoNuevo = txtUsuario.getText();
             String contraNueva = txtContraseña.getText();
@@ -273,8 +261,7 @@ private void registerUser  () {
             Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-       
-    }//GEN-LAST:event_btnRegistrarMouseClicked
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,6 +303,8 @@ private void registerUser  () {
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JPanel header;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblContrasena;
     private javax.swing.JLabel lblRegistra;
     private javax.swing.JLabel lblUsuario;
