@@ -4,8 +4,11 @@
  */
 package ruidosperdidos;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -64,6 +67,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(jLabel19);
         panelScroll.add(jLabel1);
         panelScroll.add(jLabel8);
+        panelScroll.add(lblCNegro);
+        panelScroll.add(lblFondoA);
+        panelScroll.add(lblCalaca);
         panelScroll.add(jLabel7);
         
         // Agrega el panelScroll al JScrollPane
@@ -78,6 +84,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         SetImageLebel(lblStrokes,"src/imagenes/TheStrokes.png");
         SetImageLebel(lblfondo,"src/imagenes/urban.png");
         SetImageLebel(exitTxt, "src/imagenes/exit.png");
+         ImageIcon iconoOriginal = new ImageIcon(getClass().getResource("/imagenes/fondoRpp.png"));
+lblFondoA.setIcon(hacerImagenTenue(iconoOriginal, 0.5f)); // 30% visible
+
+ ImageIcon iconoOriginal1 = new ImageIcon(getClass().getResource("/imagenes/calacach.png"));
+lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
     }
 
     int xMouse, yMouse;
@@ -89,6 +100,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         labelName.setIcon(icon);
         this.repaint();
     }
+    
+    public ImageIcon hacerImagenTenue(ImageIcon original, float opacidad) {
+    BufferedImage originalImage = new BufferedImage(
+        original.getIconWidth(),
+        original.getIconHeight(),
+        BufferedImage.TYPE_INT_ARGB);
+
+    Graphics2D g2d = originalImage.createGraphics();
+    g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opacidad));
+    g2d.drawImage(original.getImage(), 0, 0, null);
+    g2d.dispose();
+
+    return new ImageIcon(originalImage);
+}
+    
+   
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,6 +159,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         scroll = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        lblCNegro = new javax.swing.JLabel();
+        lblFondoA = new javax.swing.JLabel();
+        lblCalaca = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -227,7 +258,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLayeredPane2.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 180, 40));
 
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
-        jLayeredPane2.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 730, 410));
+        jLayeredPane2.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 810, 410));
 
         lblGorillaz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
         lblGorillaz.setText("jLabel9");
@@ -369,6 +400,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel8.setText("Discos de la semana");
         jLayeredPane2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, -1, -1));
 
+        lblCNegro.setBackground(new java.awt.Color(204, 204, 204));
+        lblCNegro.setOpaque(true);
+        jLayeredPane2.add(lblCNegro, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 410, 50));
+        jLayeredPane2.add(lblFondoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 950, 1360));
+        jLayeredPane2.add(lblCalaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1860, 970, 540));
+
         jLabel7.setBackground(new java.awt.Color(153, 153, 153));
         jLabel7.setOpaque(true);
         jLayeredPane2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 970, 2400));
@@ -499,8 +536,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBusca;
+    private javax.swing.JLabel lblCNegro;
+    private javax.swing.JLabel lblCalaca;
     private javax.swing.JLabel lblCarrito;
     private javax.swing.JLabel lblChangos;
+    private javax.swing.JLabel lblFondoA;
     private javax.swing.JLabel lblGorillaz;
     private javax.swing.JLabel lblPunk;
     private javax.swing.JLabel lblStrokes;
