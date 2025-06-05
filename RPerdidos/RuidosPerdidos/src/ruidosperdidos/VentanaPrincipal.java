@@ -38,27 +38,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelScroll.add(jLabel6);
         panelScroll.add(lblBusca);
         panelScroll.add(lblBusca);
-        panelScroll.add(jLabel9);
+        panelScroll.add(lblGorillaz);
         panelScroll.add(lblfondo);
         panelScroll.add(lblStrokes);
-        panelScroll.add(jLabel12);
+        panelScroll.add(btnSesion);
+        panelScroll.add(btnRegistrar);
+        panelScroll.add(lblPunk);
         panelScroll.add(jLabel13);
-        panelScroll.add(jLabel14);
+       panelScroll.add(jLabel19);
         panelScroll.add(lblChangos);
         panelScroll.add(jLabel16);
         panelScroll.add(jLabel17);
         panelScroll.add(jLabel18);
-        panelScroll.add(jLabel19);
+        
         panelScroll.add(jLabel20);
         panelScroll.add(jLabel21);
         panelScroll.add(lbldafpunk);
-        panelScroll.add(jButton1);
+        
         panelScroll.add(fondoS);
         panelScroll.add(txtBusqueda);
         panelScroll.add(header);
         panelScroll.add(exitBtn);
         panelScroll.add(exitTxt);
-
+        
+        panelScroll.add(jLabel19);
+        panelScroll.add(jLabel1);
+        panelScroll.add(jLabel8);
+        panelScroll.add(jLabel7);
+        
         // Agrega el panelScroll al JScrollPane
         scroll.setViewportView(panelScroll);
 
@@ -101,19 +108,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         txtBusqueda = new javax.swing.JTextField();
         lblfondo = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblGorillaz = new javax.swing.JLabel();
         lblStrokes = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblPunk = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        btnSesion = new javax.swing.JButton();
         lblChangos = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         lbldafpunk = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         lblBusca = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -122,6 +129,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblCarrito = new javax.swing.JLabel();
         fondoS = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,9 +218,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel4.setText("1990");
         jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
 
-        jButton1.setText("Registrarse");
-        jLayeredPane2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 90, -1));
-
         txtBusqueda.setOpaque(true);
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,48 +229,98 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 730, 410));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
-        jLayeredPane2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 410, 420));
+        lblGorillaz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
+        lblGorillaz.setText("jLabel9");
+        lblGorillaz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblGorillazMouseClicked(evt);
+            }
+        });
+        jLayeredPane2.add(lblGorillaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 580, 410, 420));
 
-        lblStrokes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes.png"))); // NOI18N
+        lblStrokes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/TheStrokesPrin.png"))); // NOI18N
         lblStrokes.setText("jLabel9");
-        jLayeredPane2.add(lblStrokes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1890, 150, 140));
+        jLayeredPane2.add(lblStrokes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 1940, 150, 140));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/darfpunkPor.png"))); // NOI18N
-        jLabel12.setText("jLabel9");
-        jLayeredPane2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 950, 410, 410));
+        lblPunk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/darfpunkPor.png"))); // NOI18N
+        lblPunk.setText("jLabel9");
+        lblPunk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPunkMouseClicked(evt);
+            }
+        });
+        jLayeredPane2.add(lblPunk, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 1010, 410, 410));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/TheStrokes.png"))); // NOI18N
         jLabel13.setText("jLabel9");
-        jLayeredPane2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 1380, 410, 410));
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        jLayeredPane2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 1430, 410, 410));
 
-        jLabel14.setText("Descripción");
-        jLayeredPane2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1850, 90, 30));
-
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("<html>El sexto album de estudio de la aclamada banda francesa M83, Un album que nos pone en <br>posicion introspectiva sobre la vida y problemas internos de nosotros pero no importa por que al final solo estamos durmiendo.</html>");
-        jLayeredPane2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1900, 190, 130));
+        jLayeredPane2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 1940, 280, 130));
 
-        lblChangos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gorillaz.png"))); // NOI18N
+        btnRegistrar.setBackground(new java.awt.Color(51, 51, 51));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("Registrarse");
+        btnRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+        jLayeredPane2.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 26, 100, 30));
+
+        btnSesion.setBackground(new java.awt.Color(51, 51, 51));
+        btnSesion.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnSesion.setText("Iniciar Sesión");
+        btnSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSesionActionPerformed(evt);
+            }
+        });
+        jLayeredPane2.add(btnSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(421, 26, 120, 30));
+
+        lblChangos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gorillazPri.png"))); // NOI18N
         lblChangos.setText("jLabel9");
-        jLayeredPane2.add(lblChangos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2060, 150, 140));
+        jLayeredPane2.add(lblChangos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2110, 150, 140));
 
-        jLabel17.setText("------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 760, 20));
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("<html>El primer disco de estudio de la agrupacion francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
+        jLayeredPane2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1940, 260, 130));
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        jLayeredPane2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2250, 950, 20));
+
+        lbldafpunk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/darfpunkPrin.png"))); // NOI18N
         lbldafpunk.setText("jLabel9");
-        jLayeredPane2.add(lbldafpunk, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1890, 150, 140));
+        jLayeredPane2.add(lbldafpunk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1930, 150, 140));
 
-        jLabel19.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
-        jLayeredPane2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1900, 190, 130));
-
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("<html>Visitanos<br>Ubicanos en:<br>Ruidos_Perdidos@gmail.com<br>21°28'35.2\"N 104°51'54.7\"W</html>");
-        jLayeredPane2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 2250, 190, 130));
+        jLayeredPane2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 2260, 190, 130));
         jLayeredPane2.add(lblBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 80, 40));
 
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("<html>El primer disco de estudio de la agrupacion<br>francesa daft punk con el cual cuentan con <br>artistas invitados como Julian Casablancas<br>Pharrell Williams NileRodgers Giorgo Moroder y otros.</html>");
-        jLayeredPane2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 2070, 190, 130));
+        jLayeredPane2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 2120, 290, 130));
 
+        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
 
@@ -296,11 +353,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLayeredPane2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 60, 50));
 
-        fondoS.setBackground(new java.awt.Color(153, 153, 153));
+        fondoS.setBackground(new java.awt.Color(102, 102, 102));
         fondoS.setForeground(new java.awt.Color(153, 153, 153));
         fondoS.setOpaque(true);
-        jLayeredPane2.add(fondoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 730, 90));
-        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 850, 70, 140));
+        jLayeredPane2.add(fondoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 90));
+        jLayeredPane2.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 840, 70, 140));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Descripción");
+        jLayeredPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 1870, 210, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Discos de la semana");
+        jLayeredPane2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, -1, -1));
+
+        jLabel7.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel7.setOpaque(true);
+        jLayeredPane2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 970, 2400));
 
         getContentPane().add(jLayeredPane2, java.awt.BorderLayout.PAGE_START);
 
@@ -311,19 +382,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBusquedaActionPerformed
 
-    private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
+    private void lblCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCarritoMouseClicked
+        Carrito c = new Carrito();
+        c.setVisible(true); 
         this.dispose();
-    }//GEN-LAST:event_exitTxtMouseClicked
+    }//GEN-LAST:event_lblCarritoMouseClicked
 
-    private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
-        exitBtn.setBackground(Color.red);
-        exitTxt.setForeground(Color.white);
-    }//GEN-LAST:event_exitTxtMouseEntered
+    private void lblGorillazMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGorillazMouseClicked
+      VentanaGorillas g = new VentanaGorillas(); // Instancia 
+    g.setLocationRelativeTo(null); // Centrar en pantalla 
+    g.setVisible(true); 
+    }//GEN-LAST:event_lblGorillazMouseClicked
 
-    private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
-        exitBtn.setBackground(Color.white);
-        exitTxt.setForeground(Color.black);
-    }//GEN-LAST:event_exitTxtMouseExited
+    private void lblPunkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPunkMouseClicked
+      VentanaPunk p = new VentanaPunk(); 
+    p.setLocationRelativeTo(null); 
+    p.setVisible(true); 
+    }//GEN-LAST:event_lblPunkMouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+       VentanaStrokes s = new VentanaStrokes(); 
+    s.setLocationRelativeTo(null); 
+    s.setVisible(true); 
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerMousePressed
 
     private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
         int x = evt.getXOnScreen();
@@ -331,16 +417,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_headerMouseDragged
 
-    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_headerMousePressed
+    private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
+        exitBtn.setBackground(Color.white);
+        exitTxt.setForeground(Color.black);
+    }//GEN-LAST:event_exitTxtMouseExited
 
-    private void lblCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCarritoMouseClicked
-        Carrito c = new Carrito();
-        c.setVisible(true);
+    private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
+        exitBtn.setBackground(Color.red);
+        exitTxt.setForeground(Color.white);
+    }//GEN-LAST:event_exitTxtMouseEntered
+
+    private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
         this.dispose();
-    }//GEN-LAST:event_lblCarritoMouseClicked
+    }//GEN-LAST:event_exitTxtMouseClicked
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -378,14 +475,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnSesion;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JLabel fondoS;
     private javax.swing.JPanel header;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -397,12 +494,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBusca;
     private javax.swing.JLabel lblCarrito;
     private javax.swing.JLabel lblChangos;
+    private javax.swing.JLabel lblGorillaz;
+    private javax.swing.JLabel lblPunk;
     private javax.swing.JLabel lblStrokes;
     private javax.swing.JLabel lbldafpunk;
     private javax.swing.JLabel lblfondo;
