@@ -179,7 +179,7 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
             }
         });
 
-        exitBtn.setBackground(new java.awt.Color(255, 255, 255));
+        exitBtn.setBackground(new java.awt.Color(153, 153, 153));
 
         exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -202,10 +202,10 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         exitBtn.setLayout(exitBtnLayout);
         exitBtnLayout.setHorizontalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(exitBtnLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         exitBtnLayout.setVerticalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,33 +228,39 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
 
         jLayeredPane2.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("1950");
-        jLayeredPane2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 37, -1));
+        jLayeredPane2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 37, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("1960");
-        jLayeredPane2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 30, -1));
+        jLayeredPane2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 40, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("1970");
-        jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 30, -1));
+        jLayeredPane2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 40, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("1980");
-        jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 30, -1));
+        jLayeredPane2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 40, -1));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("1990");
-        jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 30, -1));
+        jLayeredPane2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 40, -1));
 
+        txtBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         txtBusqueda.setOpaque(true);
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBusquedaActionPerformed(evt);
             }
         });
-        jLayeredPane2.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 180, 40));
+        jLayeredPane2.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 180, 40));
 
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 810, 410));
@@ -341,7 +347,7 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("<html>Visitanos<br>Ubicanos en:<br>Ruidos_Perdidos@gmail.com<br>21°28'35.2\"N 104°51'54.7\"W</html>");
         jLayeredPane2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 2260, 190, 130));
-        jLayeredPane2.add(lblBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 80, 40));
+        jLayeredPane2.add(lblBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -354,6 +360,7 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         jLabel21.setText("<html>Contacta con nosotros<br>Email: <br>Ruidos_Perdidos@gmail.com<br>Telefono<br>311-654-32-12</html>");
         jLayeredPane2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 2260, 190, 130));
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setPreferredSize(new java.awt.Dimension(40, 40));
 
@@ -381,7 +388,7 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
                 .addContainerGap())
         );
 
-        jLayeredPane2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 60, 50));
+        jLayeredPane2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 60, 50));
 
         fondoS.setBackground(new java.awt.Color(102, 102, 102));
         fondoS.setForeground(new java.awt.Color(153, 153, 153));

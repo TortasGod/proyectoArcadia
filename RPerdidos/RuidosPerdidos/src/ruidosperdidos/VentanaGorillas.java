@@ -140,10 +140,10 @@ public class VentanaGorillas extends javax.swing.JFrame {
         lblKirby.setBackground(new java.awt.Color(102, 102, 102));
         getContentPane().add(lblKirby, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 521, 409));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Gorillas");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 90, 30));
+        jLabel1.setText("Gorillaz");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 150, 40));
 
         btnBoton1.setBackground(new java.awt.Color(51, 51, 51));
         btnBoton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -169,9 +169,9 @@ public class VentanaGorillas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBotonActionPerformed
 
     private void btnBoton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoton1ActionPerformed
-     VentanaDraf compra = new VentanaDraf(); // Instancia de la otra ventana
-    compra.setLocationRelativeTo(null); // Centrar en pantalla (opcional)
-    compra.setVisible(true); // Mostrar la ventana
+     VentanaDraf compra = new VentanaDraf(); 
+    compra.setLocationRelativeTo(null); 
+    compra.setVisible(true); 
 
    
     }//GEN-LAST:event_btnBoton1ActionPerformed
