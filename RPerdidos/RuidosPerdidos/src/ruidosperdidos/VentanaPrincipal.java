@@ -66,8 +66,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         panelScroll.add(jLabel19);
         panelScroll.add(jLabel1);
-        panelScroll.add(btnSesion1);
-        
+        panelScroll.add(jLabel8);
+        panelScroll.add(lblCNegro);
         panelScroll.add(lblFondoA);
         panelScroll.add(lblCalaca);
         panelScroll.add(jLabel7);
@@ -158,7 +158,8 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         fondoS = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
-        btnSesion1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        lblCNegro = new javax.swing.JLabel();
         lblFondoA = new javax.swing.JLabel();
         lblCalaca = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -401,17 +402,14 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         jLabel1.setText("Descripción");
         jLayeredPane2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 1870, 210, -1));
 
-        btnSesion1.setBackground(new java.awt.Color(51, 51, 51));
-        btnSesion1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
-        btnSesion1.setForeground(new java.awt.Color(255, 255, 255));
-        btnSesion1.setText("Discos de la semana");
-        btnSesion1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSesion1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSesion1ActionPerformed(evt);
-            }
-        });
-        jLayeredPane2.add(btnSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 506, 400, 70));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Discos de la semana");
+        jLayeredPane2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, -1, -1));
+
+        lblCNegro.setBackground(new java.awt.Color(204, 204, 204));
+        lblCNegro.setOpaque(true);
+        jLayeredPane2.add(lblCNegro, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 410, 50));
         jLayeredPane2.add(lblFondoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 950, 1360));
         jLayeredPane2.add(lblCalaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1860, 970, 540));
 
@@ -485,10 +483,6 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSesionActionPerformed
 
-    private void btnSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSesion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSesion1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -527,7 +521,6 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSesion;
-    private javax.swing.JButton btnSesion1;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JLabel fondoS;
@@ -546,9 +539,11 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBusca;
+    private javax.swing.JLabel lblCNegro;
     private javax.swing.JLabel lblCalaca;
     private javax.swing.JLabel lblCarrito;
     private javax.swing.JLabel lblChangos;
