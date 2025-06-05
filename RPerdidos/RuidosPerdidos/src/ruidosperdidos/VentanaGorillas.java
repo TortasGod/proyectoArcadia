@@ -169,7 +169,7 @@ public class VentanaGorillas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBotonActionPerformed
 
     private void btnBoton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoton1ActionPerformed
-     VentanaDraf compra = new VentanaDraf(); 
+     Compra compra = new Compra(); 
     compra.setLocationRelativeTo(null); 
     compra.setVisible(true); 
 

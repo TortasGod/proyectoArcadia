@@ -169,7 +169,7 @@ public class VentanaStrokes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBotonActionPerformed
 
     private void btnBoton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoton1ActionPerformed
-     VentanaDraf compra = new VentanaDraf(); // Instancia de la otra ventana
+     Compra compra = new Compra(); // Instancia de la otra ventana
     compra.setLocationRelativeTo(null); // Centrar en pantalla (opcional)
     compra.setVisible(true); // Mostrar la ventana
 
