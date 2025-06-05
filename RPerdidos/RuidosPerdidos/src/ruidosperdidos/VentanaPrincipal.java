@@ -25,6 +25,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
                 this.setUndecorated(true);
         initComponents();
+        lblCatalogo.setText("");
+        
         this.setSize(900, 600);
                 this.setLocationRelativeTo(this);
         // Creamos un panel con todo el contenido
@@ -78,6 +80,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // Agrega el JScrollPane al JFrame
         this.getContentPane().add(scroll, java.awt.BorderLayout.CENTER);
         
+        SetImageLebel(lblCatalogo,"src/imagenes/CD.png");
         SetImageLebel(lblBusca,"src/imagenes/busqueda.png");
         SetImageLebel(lblChangos,"src/imagenes/gorillaz.png");
         SetImageLebel(lbldafpunk,"src/imagenes/darfpunkPor.png");
@@ -137,6 +140,9 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtBusqueda = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblCatalogo = new javax.swing.JLabel();
         lblfondo = new javax.swing.JLabel();
         lblGorillaz = new javax.swing.JLabel();
         lblStrokes = new javax.swing.JLabel();
@@ -256,6 +262,41 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
             }
         });
         jLayeredPane2.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 180, 40));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setText("Catalogo");
+
+        lblCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CD_resized_40x40.png"))); // NOI18N
+        lblCatalogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCatalogoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCatalogo)
+                .addGap(14, 14, 14))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLayeredPane2.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 100, 40));
 
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/urban.jpg"))); // NOI18N
         jLayeredPane2.add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 810, 410));
@@ -476,6 +517,12 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSesionActionPerformed
 
+    private void lblCatalogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCatalogoMouseClicked
+        Compra c = new Compra();
+        c.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblCatalogoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -518,7 +565,13 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
     private javax.swing.JLabel exitTxt;
     private javax.swing.JLabel fondoS;
     private javax.swing.JPanel header;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel1;
+=======
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
+>>>>>>> f67e0735e5e3b6116a977763829fbb19262bdb53
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -535,10 +588,12 @@ lblCalaca.setIcon(hacerImagenTenue(iconoOriginal1, 0.5f)); // 30% visible
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblBusca;
     private javax.swing.JLabel lblCNegro;
     private javax.swing.JLabel lblCalaca;
     private javax.swing.JLabel lblCarrito;
+    private javax.swing.JLabel lblCatalogo;
     private javax.swing.JLabel lblChangos;
     private javax.swing.JLabel lblFondoA;
     private javax.swing.JLabel lblGorillaz;
