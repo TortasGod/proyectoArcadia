@@ -10,6 +10,7 @@ import javax.swing.Timer;
 import javax.sound.sampled.*;
 import java.io.IOException;
 import java.net.URL;
+import javax.swing.WindowConstants;
 
 
 public class VentanaElvis extends javax.swing.JFrame {
@@ -23,7 +24,10 @@ public class VentanaElvis extends javax.swing.JFrame {
     private boolean activo = true;
     private boolean mostrarPortada = true;
     public VentanaElvis() {
-        initComponents();
+        this.setUndecorated(true); 
+        initComponents();          
+           
+       this.setLocationRelativeTo(this);
          imgGif = new ImageIcon(getClass().getResource("/imagenes/gifDisco_1.gif")); 
         portada = new ImageIcon(getClass().getResource("/imagenes/elvis.png")); 
         contraportada = new ImageIcon(getClass().getResource("/imagenes/NewElvisCon.png")); 
@@ -31,6 +35,7 @@ public class VentanaElvis extends javax.swing.JFrame {
         lblKirby.setIcon(null); // no mostrar gif al inicio
         lblKirby1.setIcon(portada); // mostrar primero la portada
         btnBoton.addMouseListener(new VentanaElvis.interna()); 
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         
         iniciarCambioImagenes();
     }
@@ -92,7 +97,7 @@ public class VentanaElvis extends javax.swing.JFrame {
                     return;
                 }
             }
-            URL sonidoURL = getClass().getResource("/imagenes/PruebaAudio1.wav");
+            URL sonidoURL = getClass().getResource("/Canciones/BlueSuede.wav");
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(sonidoURL);
             clip = AudioSystem.getClip();
             clip.open(audioIn);
@@ -142,13 +147,13 @@ public class VentanaElvis extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Elvis");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 140, 30));
+        jLabel1.setText("ELVIS-Elvis");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 140, 30));
 
         btnBoton1.setBackground(new java.awt.Color(51, 51, 51));
         btnBoton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnBoton1.setForeground(new java.awt.Color(255, 255, 255));
-        btnBoton1.setText("Comprar");
+        btnBoton1.setText("Cerrar");
         btnBoton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBoton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,48 +174,14 @@ public class VentanaElvis extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBotonActionPerformed
 
     private void btnBoton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoton1ActionPerformed
-      Compra compra = new Compra();
-            compra.setVisible(true);
-        this.dispose();
-           
-           
-    }//GEN-LAST:event_btnBoton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            if (clip != null) {
+                if (clip.isRunning()) {
+                    clip.stop(); // si está sonando detener
+                            this.dispose();
+                    return;
                 }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaElvis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaElvis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaElvis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaElvis.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaElvis().setVisible(true);
-            }
-        });
-    }
+            } 
+    }//GEN-LAST:event_btnBoton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBoton;

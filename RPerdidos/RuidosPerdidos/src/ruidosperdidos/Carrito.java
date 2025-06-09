@@ -7,6 +7,7 @@ package ruidosperdidos;
 import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.time.LocalDate;
 import javax.swing.ImageIcon;
 
 /**
@@ -18,10 +19,23 @@ public class Carrito extends javax.swing.JFrame {
     /**
      * Creates new form Carrito
      */
+    public Carrito(Object[] disco ) {
+        initComponents();
+        this.setLocationRelativeTo(this);
+        txtIdDisco.setText(disco[0].toString());
+        txtIdCarrito.setText(idCarrito+"");
+        idCarrito++;
+        txtUsuario.setText("1");
+        txtTitulos.setText(disco[1].toString());
+        txtFecha.setText(""+fecha);
+        txtTotal.setText(disco[7].toString());
+    }
+    LocalDate fecha = LocalDate.now();
+    int idCarrito=0;
+    
     public Carrito() {
         initComponents();
         this.setLocationRelativeTo(this);
-       
     }
 
     
@@ -45,6 +59,7 @@ public class Carrito extends javax.swing.JFrame {
         txtFecha = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
         txtIdDisco = new javax.swing.JTextField();
+        btnInvitado = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         lblF = new javax.swing.JLabel();
@@ -79,24 +94,37 @@ public class Carrito extends javax.swing.JFrame {
         jLabel5.setText("Total");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
-        txtIdCarrito.setBackground(new java.awt.Color(0, 0, 0));
+        txtIdCarrito.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtIdCarrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 316, -1));
 
-        txtTitulos.setBackground(new java.awt.Color(0, 0, 0));
+        txtTitulos.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtTitulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 321, -1));
 
-        txtUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        txtUsuario.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 316, -1));
 
-        txtFecha.setBackground(new java.awt.Color(0, 0, 0));
+        txtFecha.setEditable(false);
+        txtFecha.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 325, -1));
 
-        txtTotal.setBackground(new java.awt.Color(0, 0, 0));
+        txtTotal.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 325, -1));
 
-        txtIdDisco.setBackground(new java.awt.Color(0, 0, 0));
+        txtIdDisco.setBackground(new java.awt.Color(204, 204, 204));
         txtIdDisco.setOpaque(true);
         getContentPane().add(txtIdDisco, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 319, -1));
+
+        btnInvitado.setBackground(new java.awt.Color(51, 51, 51));
+        btnInvitado.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        btnInvitado.setForeground(new java.awt.Color(255, 255, 255));
+        btnInvitado.setText("Confirmar");
+        btnInvitado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInvitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInvitadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 100, 30));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -118,50 +146,22 @@ public class Carrito extends javax.swing.JFrame {
         jLabel7.setText("id Disco");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("jLabel9");
+        jLabel9.setBackground(new java.awt.Color(204, 204, 204));
         jLabel9.setOpaque(true);
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Carrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Carrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Carrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Carrito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Carrito().setVisible(true);
-            }
-        });
-    }
+    private void btnInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvitadoActionPerformed
+        VentanaPrincipal p = new VentanaPrincipal();
+        p.setLocationRelativeTo(null);
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnInvitadoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnInvitado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

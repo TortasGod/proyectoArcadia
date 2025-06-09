@@ -29,10 +29,13 @@ public class ConexionSQL {
         
         
     }//conectar SQLServer
-    
-    
-    public static void main(String[] args) {
-        ConexionSQLServer();
+
+    public static Connection getCon() {
+        return con;
+    }
+
+    public static void setCon(Connection con) {
+        ConexionSQL.con = con;
     }
     
 }

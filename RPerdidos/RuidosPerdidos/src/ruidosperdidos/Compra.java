@@ -22,13 +22,16 @@ import java.util.logging.Logger;
  * @author magal
  */
 public class Compra extends javax.swing.JFrame {
+
     public static Connection con;
+    private Object[] disco = new Object[8];
+
     /**
      * Creates new form Compra
      */
     public Compra() {
-        con = ConexionSQL.ConexionSQLServer();
-        
+        con = ConexionSQL.getCon();
+
         this.setUndecorated(true);
         initComponents();
         llenarCatalogo();
@@ -90,9 +93,16 @@ public class Compra extends javax.swing.JFrame {
             }
         });
 
+        lblConfirmar.setText("sdfgfds");
         lblConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblConfirmarMouseClicked(evt);
+            }
+        });
+
+        lblAtras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAtrasMouseClicked(evt);
             }
         });
 
@@ -246,7 +256,7 @@ public class Compra extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbCantidadMouseClicked
 
     private void cmbCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCantidadActionPerformed
-        
+
     }//GEN-LAST:event_cmbCantidadActionPerformed
 
     private void exitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseClicked
@@ -281,140 +291,131 @@ public class Compra extends javax.swing.JFrame {
             Statement st;
             st = con.createStatement();
             ResultSet rs;
-            
-            String query = "select descripcion from Disco\n" +
-            "where titulo='"+cmbCatalogo.getSelectedItem().toString()+"';";
+
+            String query = "select descripcion from Disco\n"
+                    + "where titulo='" + cmbCatalogo.getSelectedItem().toString() + "';";
             rs = st.executeQuery(query);
-            String descrip="";
-            while(rs.next()){
-               descrip = rs.getString("descripcion");
-               txtDesc.setText(descrip);
+            String descrip = "";
+            while (rs.next()) {
+                descrip = rs.getString("descripcion");
+                txtDesc.setText(descrip);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        if(cmbCatalogo.getSelectedItem().toString().equals("The Dark Side of the Moon")){
+
+        if (cmbCatalogo.getSelectedItem().toString().equals("The Dark Side of the Moon")) {
             lblLogoDisco.setText("Pink Floyd");
             SetImageLebel(lblLogoDisco, "src/imagenes/DarkSideOfTheMoon.jpg");
         }
-        
-        if(cmbCatalogo.getSelectedItem().toString().equals("The Colour and the Shape")){
-            
+
+        if (cmbCatalogo.getSelectedItem().toString().equals("The Colour and the Shape")) {
+
             lblLogoDisco.setText("Foo Fighters");
             SetImageLebel(lblLogoDisco, "src/imagenes/TheColourAndTheShape.jpg");
         }
-        
+
         //enVivoBellasArtes
-        
-         if(cmbCatalogo.getSelectedItem().toString().equals("En vivo desde bellas artes")){
-            
+        if (cmbCatalogo.getSelectedItem().toString().equals("En vivo desde bellas artes")) {
+
             lblLogoDisco.setText("Juan Gabriel");
             SetImageLebel(lblLogoDisco, "src/imagenes/enVivoBellasArtes.jpg");
         }
-         
-        if(cmbCatalogo.getSelectedItem().toString().equals("Definitely Maybe")){
-            
+
+        if (cmbCatalogo.getSelectedItem().toString().equals("Definitely Maybe")) {
+
             lblLogoDisco.setText("Oasis");
             SetImageLebel(lblLogoDisco, "src/imagenes/definitelyMaybe.jpg");
         }
-        
-        if(cmbCatalogo.getSelectedItem().toString().equals("Let it be")){
+
+        if (cmbCatalogo.getSelectedItem().toString().equals("Let it be")) {
             lblLogoDisco.setText("The Beatles");
             SetImageLebel(lblLogoDisco, "src/imagenes/letItBe.jpg");
         }
-         
-         
+
+        llenarCantidad();
     }//GEN-LAST:event_cmbCatalogoItemStateChanged
 
     private void lblConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmarMouseClicked
-        Carrito c = new Carrito();
+        Carrito c = new Carrito(disco);
         c.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblConfirmarMouseClicked
-    
-    public void llenarCatalogo(){
+
+    private void lblAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAtrasMouseClicked
+        // TODO add your handling code here:
+                VentanaPrincipal vp = new VentanaPrincipal();
+        vp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lblAtrasMouseClicked
+
+    public void llenarCatalogo() {
         try {
             Statement st;
             st = con.createStatement();
             ResultSet rs;
+
             
-            String query = "Select titulo from disco;";
+            
+            String query = "Select * from disco";
             rs = st.executeQuery(query);
-            String titulo="";
-            while(rs.next()){
-               titulo = rs.getString("titulo");
+            String titulo = "",artista = "",genero= "",descripcion= "",formato= "";
+            int id = 0,ano = 0;
+            double precio = 0.0;
+            
+            while (rs.next()) {
+                titulo = rs.getString("titulo");
+                artista = rs.getString("artista");
+                genero = rs.getString("genero");
+                descripcion = rs.getString("genero");
+                formato = rs.getString("formato");
+                precio = rs.getDouble("precio");
+                id = rs.getInt("idDisco");
+                ano = rs.getInt("año");
                 cmbCatalogo.addItem(titulo);
             }
+            disco[0]=id;
+            disco[1]=titulo;
+            disco[2]=artista;
+            disco[3]=ano;
+            disco[4]=genero;
+            disco[5]=descripcion;
+            disco[6]=formato;
+            disco[7]=precio;
+            
         } catch (SQLException ex) {
             Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
     }
-    
-    private void llenarCantidad(){
-           cmbCantidad.removeAllItems();   
+
+    private void llenarCantidad() {
+        cmbCantidad.removeAllItems();
         try {
             Statement st;
             st = con.createStatement();
             ResultSet rs;
-            
-            String queryCantidad = "Select inv.cantidad, d.titulo \n" +
-            "from Inventario inv\n" +
-            "inner join Disco d on (d.idDisco = inv.idDisco)\n" +
-            "where d.titulo = '"+cmbCatalogo.getSelectedItem().toString()+"';";
+
+            String queryCantidad = "Select inv.cantidad, d.titulo \n"
+                    + "from Inventario inv\n"
+                    + "inner join Disco d on (d.idDisco = inv.idDisco)\n"
+                    + "where d.titulo = '" + cmbCatalogo.getSelectedItem().toString() + "';";
             int cantidad = 0;
             System.out.println(queryCantidad);
             rs = st.executeQuery(queryCantidad);
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 cantidad = Integer.parseInt(rs.getString("cantidad"));
             }
-            System.out.println("Cantidad de discos en la bd: "+cantidad);
-            
-            for(int i=0;i<=cantidad;i++){
-                cmbCantidad.addItem(i+"");
+            System.out.println("Cantidad de discos en la bd: " + cantidad);
+
+            for (int i = 0; i <= cantidad; i++) {
+                cmbCantidad.addItem(i + "");
             }
         } catch (SQLException ex) {
             Logger.getLogger(Compra.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-    }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Compra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Compra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Compra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Compra.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Compra().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

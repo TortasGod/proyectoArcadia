@@ -139,11 +139,17 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lblConfirmar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="sdfgfds"/>
+      </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblConfirmarMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAtras">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAtrasMouseClicked"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="header">
       <Properties>
